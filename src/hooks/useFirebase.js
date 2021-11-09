@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { GoogleAuthProvider,signInWithPopup,onAuthStateChanged,signOut } from "firebase/auth";
+import { GoogleAuthProvider,signInWithPopup,signInWithEmailAndPassword,createUserWithEmailAndPassword,onAuthStateChanged,signOut } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { useState } from "react";
 import initializeAuthentication from "../Atuhentication/firebase.init";
@@ -26,8 +26,26 @@ const useFirebase = () => {
             setIsLoading(false);
           });
     }
+    // Sign up manually
+    const signUpManually = (name,email,password) => {
+      setIsLoading(true);
+      // Manual signup
+      return createUserWithEmailAndPassword(auth, email, password)
+                .finally( () => {
+                  setIsLoading(false);
+                })
+            
+    }
 
-
+    // Log in manually
+    const logInManually = (email,password) => {
+      setIsLoading(true);
+      // Manual Login
+      return signInWithEmailAndPassword(auth, email, password)
+          .finally( () => {
+            setIsLoading(false);
+          });
+    }
     // Log Out 
     const logOut = () => {
         setIsLoading(true);
@@ -59,6 +77,8 @@ const useFirebase = () => {
         user,
         error,
         signInWithGoogle,
+        signUpManually,
+        logInManually,
         logOut,
         isLoading
         

@@ -1,11 +1,12 @@
 import {getAuth, updateProfile  } from '@firebase/auth';
 import React, { useState } from 'react';
-import { Link,useLocation } from 'react-router-dom';
+import { Link,useLocation,useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const SignUp = () => {
     // History & location
     const location = useLocation();
+    const history = useHistory();
     //const redirect_url = location.state?.from || "/home";
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
@@ -14,7 +15,7 @@ const SignUp = () => {
     const [error,setError] = useState('');
     const [signUpMessage, setSignUpMessage] = useState(''); // success signup message
     
-    const {signInWithGoogle,signUpManually} = useAuth();
+    const {signInWithGoogle,signUpManually,isLoading} = useAuth();
     const auth =getAuth();
 
     // Google Sign Up
@@ -71,6 +72,7 @@ const SignUp = () => {
                     .then(() => {
                         setSignUpMessage("Your New Account Created Succufully :)");
                         e.target.reset();
+                        window.location.reload();
                     })
                     .catch((error) => {
                         setError(error.message);
@@ -90,6 +92,9 @@ const SignUp = () => {
                 <div className="row row-cols-lg-2">
                     <div className="col my-auto">
                         {signUpMessage && <h6 className="text-success text-end fs-5" role="alert">{signUpMessage}</h6>}
+                        {isLoading && <div class="spinner-border text-primary float-end" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>}
                         <h1 className="mb-5">Sign Up</h1>
                         <form onSubmit={handleRegistration} className="border-0">
                             <div className="mb-3">

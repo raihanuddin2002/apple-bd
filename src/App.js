@@ -12,6 +12,7 @@ import About from './components/About/About';
 import MyOrders from './components/MyOrders/MyOrders';
 import AllOrders from './components/AllOrders/AllOrders';
 import AddService from './components/AddService/AddService';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   return (
@@ -47,6 +48,10 @@ function App() {
 
               <Route path="/login">
                   <Login></Login>
+              </Route>
+
+              <Route path="/signup">
+                  <SignUp></SignUp>
               </Route>
 
               <Route exact path="/">
