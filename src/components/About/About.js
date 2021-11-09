@@ -6,18 +6,18 @@ const About = () => {
             <div className="about-container text-center">
                 <div className="about-container-clone d-flex justify-content-center align-items-center">
                     <div>
-                        <h1 className="display-1 text-white shadow-lg">WECOME TO ABOUT PAGE</h1>
+                        <h1 className="display-1 text-pink shadow-lg">WECOME TO ABOUT PAGE</h1>
                     </div>
                 </div>
             </div>
 
             {/*  */}
             <div className="container my-5 py-md-5">
-                <h1 className="display-3 text-primary mb-4">ABOUT US</h1>
-                <p className="fs-5">Travelller BD is the largest independently owned travel agency headquartered in Dhaka, and consistently ranked among the top 50 largest in the Bangladesh."We are an employee-owned company with a passion for providing exemplary customer service, leveraging our expertise and technology to deliver innovative travel solutions in a gratifying work environment."Travelller BD  is headquartered in Los Angeles, California, with branch locations throughout the state, specializing in corporate travel solutions and custom vacation travel planning.
+                <h1 className="display-3 text-pink mb-4">ABOUT US</h1>
+                <p className="fs-5">Apple BD is the largest independently owned travel agency headquartered in Dhaka, and consistently ranked among the top 50 largest in the Bangladesh."We are an employee-owned company with a passion for providing exemplary customer service, leveraging our expertise and technology to deliver innovative travel solutions in a gratifying work environment."Travelller BD  is headquartered in Los Angeles, California, with branch locations throughout the state, specializing in corporate travel solutions and custom vacation travel planning.
                 Our corporate centers are located in Los Angeles, Sacramento and Irvine. Our leisure vacation travel locations include Los Angeles, Sacramento, Irvine, Palos Verdes/South Bay, Pasadena and Santa Barbara/Camarillo. We are pleased to introduce you our Management Teams:
                 Meet our Executive Leadership team here
-                Meet our Corporate Travel Managers here
+                Meet our Corporate Managers here
                 Meet our Client Service Managers here</p>
             </div>
 
@@ -25,7 +25,7 @@ const About = () => {
             <div style={{background: "#cdcdcd"}}>
             <div className="container py-5">
                 <div className="courses-header text-center">
-                    <h2 className="card-header text-white courses-heading py-4 mt-lg-5 display-3 bg-dark">OVERVIEW</h2>
+                    <h2 className="card-header courses-heading py-4 mt-lg-5 display-3 bg-light-pink">OVERVIEW</h2>
                     
                 </div>
 

@@ -21,12 +21,12 @@ const ServiceDetails = () => {
     const phoneRef = useRef(); 
 
     // ticket quantity
-    const ticketQuantity = (e) => {
-        const ticketQuantityValue = e.target.value;
-        setTicekt(ticketQuantityValue);
+    const productQuantity = (e) => {
+        const productQuantityValue = e.target.value;
+        setTicekt(productQuantityValue);
     }
     useEffect( () => {
-        axios.get(`https://damp-cliffs-56350.herokuapp.com/services/${id}`)
+        axios.get(`https://secret-tor-67063.herokuapp.com/services/${id}`)
             .then(res => setServices(res.data))
     },[services])
 
@@ -34,17 +34,17 @@ const ServiceDetails = () => {
     const handleCartForm = (e) => {
         e.preventDefault();
 
-        const ticketQuantity = ticket;
+        const productQuantity = ticket;
         const address = adressRef.current.value; 
         const phone = phoneRef.current.value;
         
         const proceedOrder = {
-            name,description,price,rating,people,picture,displayName,email,address, phone, ticketQuantity, totalCost, orderStatus
+            name,description,price,rating,people,picture,displayName,email,address, phone, productQuantity, totalCost, orderStatus
         }
 
         // Saved order
         
-        fetch(`https://damp-cliffs-56350.herokuapp.com/placeOrder/${id}`, {
+        fetch(`https://secret-tor-67063.herokuapp.com/placeOrder/${id}`, {
             method: 'POST',
             headers:{
                 'content-type':'application/json'
@@ -66,9 +66,9 @@ const ServiceDetails = () => {
         <div className="container my-5 py-5">
             <div className="row cardd">
                 <div className="col-lg-8">
-                    <h5 className="card-header text-center display-4 bg-dark text-white">Service Info</h5>
+                    <h5 className="card-header text-center display-4 bg-light-pink">Service Info</h5>
                     <div className="">
-                        <table className="table table-striped table-bordered border-top-0 fs-4">
+                        <table className="table table-striped table-bordered fs-4">
                             <tbody>
                                 <tr>
                                 <th scope="row">Service no</th>
@@ -88,7 +88,7 @@ const ServiceDetails = () => {
                                 </tr>
                                 <tr>
                                 <th scope="row">Rating</th>
-                                <td><i className="fas fa-star fs-5 text-warning"></i> {rating}</td>
+                                <td><i className="fas fa-star fs-5 text-pink"></i> {rating}</td>
                                 </tr>
                                 <tr>
                                 <th scope="row">People</th>
@@ -105,7 +105,7 @@ const ServiceDetails = () => {
 
                 <div className="col-lg-4">
                     <div className="border">
-                        <h5 className="card-header text-center bg-dark text-white">Cart</h5>
+                        <h5 className="card-header text-center bg-light-pink">Cart</h5>
                         <div className="p-3">
                             <form onSubmit={handleCartForm}>
                                 <div className="mb-3">
@@ -126,14 +126,14 @@ const ServiceDetails = () => {
                                     <input  ref={phoneRef} type="text" className="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" required/>
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="exampleInputQuantity" className="form-label">Ticket Quantity</label>
-                                    <input onChange={ticketQuantity} type="text" className="form-control" id="exampleInputQuantity" aria-describedby="quantityHelp" value={ticket}/>
+                                    <label htmlFor="exampleInputQuantity" className="form-label">Quantity</label>
+                                    <input onChange={productQuantity} type="text" className="form-control" id="exampleInputQuantity" aria-describedby="quantityHelp" value={ticket}/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputCost" className="form-label">Total Price</label>
                                     <input type="text" className="form-control" id="exampleInputCost" aria-describedby="costHelp" value={totalCost.toFixed(2)} readOnly/>
                                 </div>
-                                <button type="submit" className="btn btn-warning">Proceed Order</button>
+                                <button type="submit" className="btn bg-pink">Proceed Order</button>
                                 <h6 className="text-success mt-3">{sucess}</h6>
                             </form>
                         </div>

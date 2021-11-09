@@ -74,20 +74,19 @@ const Login = () => {
                                 <input onBlur={getPass} type="password" className="form-control border-0 border-bottom border-2 border-dark" id="exampleInputPassword1"/>
                             </div>
                             <h6 className="text-danger">{error}</h6>
-                            <button type="submit" className="btn btn-primary px-5 py-3 text-uppercase fs-5">Log in</button>
+                            <button type="submit" className="btn bg-pink px-5 py-3 text-uppercase fs-5">Log in</button>
                             <div className="my-3 text-center">
-                              <Link to="/signup"><span>Create a new account?</span></Link>
+                              <Link to="/signup"><span className="text-pink text-decoration-none">Create a new account?</span></Link>
                             </div>
                         </form>
                     </div>
                     <div className="col">
                         <h3 className="text-center d-none d-md-block">Get Started</h3>
                         <div className="d-none d-md-block">
-                            <img className="img-fluid" src="https://i.ibb.co/p0xF8fc/online-registration-sign-up-concept-flat-vector-illustration-young-male-cartoon-character-sitting-hu.jpg" alt="" />
+                            <img className="img-fluid" src="https://i.ibb.co/cQJcWm8/gero-1.png" alt="" />
                         </div>
                         <div className="text-center d-flex">
-                            <button  onClick={handleGoogleSignIn} className="btn btn-danger w-100 me-2">Google</button>
-                            <button className="btn btn-dark w-100 me-2" >Github</button>
+                            <button  onClick={handleGoogleSignIn} className="btn btn-dark w-100 me-2">Google</button>
                         </div>
                     </div>
                 </div>

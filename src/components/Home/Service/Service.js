@@ -7,7 +7,7 @@ const Service = (props) => {
         <div className="col d-flex align-items-stretch">
             <article className="service-col p-5 bg-light shadow-lg rounded-4">
                 <p className="mb-4 text-center">
-                    <img srcSet={picture} alt="" className="img-fluid" />
+                    <img style={{height: '30vh'}} srcSet={picture} alt="" className="img-fluid" />
                 </p>
                 <h3 className="fw-bold mb-4 ff-volkhob">
                    {name}
@@ -21,10 +21,10 @@ const Service = (props) => {
                         ${price}
                     </h5>
                     <div>
-                    <i className="fas fa-star fs-5 text-warning"></i> <span className="fw-bold">{rating}</span>({people})
+                    <i className="fas fa-star fs-5 text-pink"></i> <span className="fw-bold">{rating}</span>({people})
                     </div>
                 </div>
-                <Link to={`orderPlace/${_id}`}><button className="btn btn-warning px-4">Book Now</button></Link>
+                <Link to={`orderPlace/${_id}`}><button className="btn bg-pink px-4">Buy Now</button></Link>
             </article>
         </div>
         // 

@@ -40,7 +40,18 @@
 /*===================
     1.COMMON CSS
  ==================== */
-
+.text-pink{
+  color: #ff7593 !important;
+}
+.bg-pink{
+  background-color: #fac6bc;
+}
+.bg-light-pink{
+  background-color: #cfbebb;
+}
+.border-pink{
+  border: 1px solid #ff7593 !important;
+}
 
 /* font-color */
 

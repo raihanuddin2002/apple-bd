@@ -13,7 +13,7 @@ const Ourservices = () => {
     
     useEffect(() => {
        
-        axios.post('https://damp-cliffs-56350.herokuapp.com/myOrders', userInfo)
+        axios.post('https://secret-tor-67063.herokuapp.com/myOrders', userInfo)
             .then(res => {
                 setservices(res.data)
             })
@@ -22,7 +22,7 @@ const Ourservices = () => {
     return (
         <div>
              <div className="container">
-                <h2 className="text-white py-4 mt-3 mt-lg-5 display-3 bg-dark text-center">YOUR ORDERS</h2>
+                <h2 className="py-4 mt-3 mt-lg-5 display-3 bg-light-pink text-center">YOUR ORDERS</h2>
                  <div className="row row-cols-1 gy-4 mt-3 my-5">
                     {
                        services && services.map(service => <OurOrder key={service._id} data={service}></OurOrder>)

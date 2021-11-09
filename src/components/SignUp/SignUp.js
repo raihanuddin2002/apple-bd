@@ -114,7 +114,7 @@ const SignUp = () => {
                                 <input onBlur={getConfirmPass} type="password" className="form-control border-0 border-bottom border-2 border-dark" id="exampleInputPassword1" required/>
                             </div>
                             <h6 className="mb-3 text-danger">{error}</h6>
-                            <button type="submit" className="btn btn-primary px-5 py-3 text-uppercase">Sign Up</button>
+                            <button type="submit" className="btn bg-pink px-5 py-3 text-uppercase">Sign Up</button>
                             <div className="my-3 text-center">
                               <Link to="/login"><span>Already has an account?</span></Link>
                             </div>
@@ -122,13 +122,12 @@ const SignUp = () => {
                     </div>
                     <div className="col">
                     <h3 className="text-center d-none d-md-block">Get Started</h3>
-                        <div className="d-none d-md-block">
-                            <img className="img-fluid" src="https://i.ibb.co/p0xF8fc/online-registration-sign-up-concept-flat-vector-illustration-young-male-cartoon-character-sitting-hu.jpg" alt="" />
+                        <div className="d-none d-md-block text-center">
+                            <img className="img-fluid mx-auto" src="https://i.ibb.co/4d0hycb/Apple-iphone13-hero-09142021-inline-jpg-large-removebg-preview.png" alt="" />
                         </div>
                        
                         <div className="text-center d-flex">
-                            <button onClick={handleGoogleSignIn} className="btn btn-danger w-100 me-2">Google</button>
-                            <button className="btn btn-dark w-100 me-2">Github</button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-dark w-100 me-2">Google</button>
                         </div>
                     </div>
                 </div>
