@@ -1,0 +1,123 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*===================
+    1.COMMON CSS
+ ==================== */
+
+
+/* font-color */
+
+.text-light-red {
+  color: #DF6951;
+}
+
+.text-royel-blue {
+  color: #181E4B;
+}
+
+.text-gray {
+  color: #5E6282;
+}
+
+
+/* font family */
+
+.ff-popins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.ff-volkhob {
+  font-family: 'Volkhov', serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0px;
+}
+
+
+/* font size */
+
+.fs-4rem {
+  font-size: 4rem;
+}
+
+
+/*=============================
+  3.category section CSS
+=============================*/
+
+.category-card {
+  border-radius: 30px !important;
+}
+
+
+/*===========================
+  5.Subscribe section CSS
+=============================== */
+
+.subscribe-section {
+  padding: 100px 10%;
+  line-height: 1.7em;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about-container{
+  background: url(https://i.ibb.co/Bg8SFrs/oh-planning-saint-john-medical-center-entrance-rendering-hero.jpg);
+  height: 60vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.about-container-clone{
+  height: 60vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-header {
+      font-size: 46px;
+  }
+  .subscribe-header {
+      font-size: 20px !important;
+  }
+}

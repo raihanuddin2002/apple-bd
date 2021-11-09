@@ -1,0 +1,83 @@
+[
+    {
+        "id" : 1,
+        "title" : "Search doctor",
+        "description" : "Choose your doctor from thousands of specialist, general, and trusted hospitals. Get qualified doctors.",
+        "image_url" : "https://i.ibb.co/ng9Tc6q/Groupserach.png",
+        "degree": "MBBS",
+        "doctor_name": "Alis Sadman"
+    },
+    {
+        "id" : 2,
+        "title" : "Online pharmacy",
+        "description" : "Buy your medicines with our mobile application with a simple delivery system. In this We are best.",
+        "image_url" : "https://i.ibb.co/9NQ8369/Framebottol.png",
+        "degree": "MBBS",
+        "doctor_name": "Sadman Jack"
+    },
+    {
+        "id" : 3,
+        "title" : "Consultation",
+        "description" : "Free consultation with our trusted doctors and get the best recomendations. Best quality.",
+        "image_url" : "https://i.ibb.co/Rc5Rs8Q/Frameboard.png",
+        "degree": "MBBS",
+        "doctor_name": "Robbine Road"
+    },
+    {
+        "id" : 4,
+        "title" : "Details info",
+        "description" : "Choose your doctor from thousands of specialist, general, and trusted hospitals",
+        "image_url" : "https://i.ibb.co/7vY12Mf/Framedetals.png",
+        "degree": "MBBS",
+        "doctor_name": "Moris Anderson"
+    },
+    {
+        "id" : 5,
+        "title" : "Emergency care",
+        "description" : "You can get 24/7 urgent care for yourself or your children and your lovely family. Stay happy, stay safe :)",
+        "image_url" : "https://i.ibb.co/qRV1SgV/Frameemergency.png",
+        "degree": "MBBS",
+        "doctor_name": "Protasko Poe"
+    },
+    {
+        "id" : 6,
+        "title" : "Tracking",
+        "description" : "Track and save your medical history and health data",
+        "image_url" : "https://i.ibb.co/gVqRyrh/Frametrocking.png",
+        "degree": "MBBS",
+        "doctor_name": "Danial Lookson"
+    },
+    {
+        "id" : 7,
+        "title" : "Blood Pressure Monitor",
+        "description" : "Blood pressure is the force of your blood pushing against the walls of your arteries. Each time your heart beats, it pumps blood into the arteries. Your blood pressure is highest when your heart beats, pumping the blood.",
+        "image_url" : "https://i.ibb.co/7vY12Mf/Framedetals.png",
+        "degree": "MBBS",
+        "doctor_name": "Adam Saman"
+    },
+    {
+        "id" : 8,
+        "title" : "First Aid",
+        "description" : "First aid refers to the emergency or immediate care you should provide when a person is injured or ill until full medical treatment is available. ",
+        "image_url" : "https://i.ibb.co/9NQ8369/Framebottol.png",
+        "degree": "MBBS",
+        "doctor_name": "Alok Adman"
+    },
+    {
+        "id" : 9,
+        "title" : "Medcine",
+        "description" : " Medicines can treat diseases and improve your health. If you are like most people, you need to take medicine at some point in your life.",
+        "image_url" : "https://i.ibb.co/gVqRyrh/Frametrocking.png",
+        "degree": "MBBS",
+        "doctor_name": "Mita Paul"
+    },
+    {
+        "id" : 10,
+        "title" : "Emergency",
+        "description" : "The Emergency Services Sector (ESS) is a community of millions of highly-skilled, trained personnel, along    with the physical and cyber resources, ...",
+        "image_url" : "https://i.ibb.co/qRV1SgV/Frameemergency.png",
+        "degree": "FCPS",
+        "doctor_name": "Neman Vogla, Daina Adelena"
+        
+    }
+]
