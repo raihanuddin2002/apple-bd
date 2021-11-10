@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Service from './Service/Service';
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
     const [isLoading, setLoading] = useState(true);
 
     useEffect( () => {
-        axios.get("https://secret-tor-67063.herokuapp.com/products")
+        axios.get("https://secret-tor-67063.herokuapp.com/productsLimit")
             .then(res => {
                 setLoading(true);
                 if(res){
@@ -27,7 +28,7 @@ const Home = () => {
                         <h4 className="text-uppercase text-pink fw-bold fs-5 mb-4">Best Mobile Phones around the world</h4>
                         <h1 className="hero-header ff-volkhob text-royel-blue fw-bold fs-4rem mb-4">Buy, Use & Enjoy</h1>
                         <p className="text-gray mb-4">iPhone is more than the device in your hand. Find out why data protection, renewable energy and recycling are also part of iPhone.Every iPhone we've made — and we mean every single one — was built on the belief that a phone should be simple, beautiful, and magical to use.</p>
-                        <button className="btn bg-pink border-0 px-4 py-3 rounded">Explore more</button>
+                        <Link to="/products"><button className="btn bg-pink border-0 px-4 py-3 rounded">Explore more</button></Link>
                     </div>
                     <div className="hero-right col-xxl-6">
                         <img style={{height: '70vh'}} className="img-xl-fluid w-100" srcSet="https://i.ibb.co/4d0hycb/Apple-iphone13-hero-09142021-inline-jpg-large-removebg-preview.png" alt=""/>
@@ -64,40 +65,44 @@ const Home = () => {
                 <h5 className="text-gray text-center">Top Selling</h5>
                 <h1 className="fs-1 ff-volkhob text-center">Top Mobile Phones</h1>
                 <div className="blank d-none d-md-block"  style={{height:"30px"}}></div>
-                <div className="row">
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 ">
                     {/* <!-- className="col-md-6 col-xl-4 text-center align-content-center" --> */}
-                    <div className="d-flex  justify-sm-content-center align-items-center flex-column flex-lg-row justify-content-lg-evenly">
-                        <div className="col-12 col-sm-8 col-lg-3 mb-4">
-                            <div className="card category-card mx-auto border-0 shadow-sm p-3 bg-body rounded-3">
-                                <img srcSet="https://i.ibb.co/9hfjyHh/rome.png " width="200 " height="350 " className="card-img-top" alt="... "/>
+                        <div className="col mb-4">
+                            <div className="card mx-auto border-0 shadow-lg p-3 bg-body">
+                                <img srcSet="https://i.ibb.co/SR8ms3b/i-Phone-12-iphone-12-mini-purple.webp" width="200 " height="350 " className="card-img-top" alt="... "/>
                                 <div className="card-body d-flex justify-content-between text-muted">
-                                    <p className="card-text mb-0">Rome, Italty</p>
-                                    <p className="card-text mb-0">$5.4K</p>
+                                    <p className="card-text mb-0">IPhone 12 Mini</p>
+                                    <p className="card-text mb-0">$699</p>
                                 </div>
-                                <p className="mt-0"><i className="fas fa-location-arrow"></i><small className="text-muted ms-3">8 Days Trip</small></p>
                             </div>
                         </div>
-                        <div className="col-12 col-sm-8 col-lg-3 mb-4">
-                            <div className="card category-card border-0 shadow-sm p-3 bg-body rounded-3">
-                                <img srcSet="https://i.ibb.co/71ssSd2/us.png" width="200 " height="350 " className="card-img-top " alt="... "/>
+                        <div className="col mb-4">
+                            <div className="card border-0 shadow-lg p-3 bg-body">
+                                <img srcSet="https://i.ibb.co/GdRWh6f/iphone-13-f-e1631703251417-1024x552.jpg" width="200 " height="350 " className="card-img-top " alt="... "/>
                                 <div className="card-body d-flex justify-content-between text-muted">
-                                    <p className="card-text mb-0">London, UK</p>
-                                    <p className="card-text mb-0">$4.4K</p>
+                                    <p className="card-text mb-0">IPhone 13 Mini</p>
+                                    <p className="card-text mb-0">$600</p>
                                 </div>
-                                <p className="mt-0"><i className="fas fa-location-arrow"></i><small className="text-muted ms-3">10 Days Trip</small></p>
                             </div>
                         </div>
-                        <div className="col-12 col-sm-8 col-lg-3 mb-4">
-                            <div className="card category-card border-0 shadow-sm p-3 bg-body rounded-3">
-                                <img srcSet="https://i.ibb.co/dB19Ysd/eupore.png" width="200" height="350" className="card-img-top " alt="... "/>
+                        <div className="col mb-4">
+                            <div className="card border-0 shadow-lg p-3 bg-body">
+                                <img srcSet="https://i.ibb.co/s1f4qJN/apple-iphone-12-pro-max.jpg" width="200" height="350" className="card-img-top " alt="... "/>
                                 <div className="card-body d-flex justify-content-between text-muted">
-                                    <p className="card-text mb-0">Full Europe</p>
-                                    <p className="card-text mb-0">$15K</p>
+                                    <p className="card-text mb-0">IPhone 12 Pro Max</p>
+                                    <p className="card-text mb-0">$800</p>
                                 </div>
-                                <p className="mt-0"><i className="fas fa-location-arrow"></i><small className="text-muted ms-3">1 month Trip</small></p>
                             </div>
                         </div>
-                    </div>
+                        <div className="col mb-4">
+                            <div className="card border-0 shadow-lg p-3 bg-body">
+                                <img srcSet="https://i.ibb.co/ZTs6Hyp/R5ghkk2-SBc6-VKYzntuox-SB-768-80.jpg" width="200" height="350" className="card-img-top " alt="... "/>
+                                <div className="card-body d-flex justify-content-between text-muted">
+                                    <p className="card-text mb-0">IPhone 12 Pro</p>
+                                    <p className="card-text mb-0">$1099</p>
+                                </div>
+                            </div>
+                        </div>
                 </div>
                 <div className="blank d-none d-md-block"  style={{height:"50px"}}></div>
             </section>

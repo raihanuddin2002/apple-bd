@@ -26,7 +26,7 @@ const ServiceDetails = () => {
         setTicekt(productQuantityValue);
     }
     useEffect( () => {
-        axios.get(`https://secret-tor-67063.herokuapp.com/services/${id}`)
+        axios.get(`https://secret-tor-67063.herokuapp.com/products/${id}`)
             .then(res => setServices(res.data))
     },[services])
 
