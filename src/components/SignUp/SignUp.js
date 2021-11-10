@@ -21,13 +21,24 @@ const SignUp = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then((result) => {
-               setSignUpMessage("Sign Up Successful :)")
+                const name = result.user.displayName;
+                const email = result.user.email;
+                saveUserGoogle(name, email);
+                setSignUpMessage("Sign Up Successful :)")
 
             }).catch((error) => {
                 setError(error.message);
                 // ...
             })
         setSignUpMessage("");
+    }
+    // Saved google user
+    const saveUserGoogle = (name,email) => {
+        const saveUserInfo ={
+            name: name, email: email, password: "", role:"normal"
+        }
+        axios.put('https://secret-tor-67063.herokuapp.com/saveUserInfo',{saveUserInfo})
+            .then(res => console.log("Google User inserted sucessfully done"))
     }
 
     // get name
@@ -47,7 +58,7 @@ const SignUp = () => {
        const confirmPass =  e.target.value;
        setConfirmPassword(confirmPass);
     }
-
+    
     /*===========================
      *  Manual registration 
      *==========================*/
@@ -62,15 +73,12 @@ const SignUp = () => {
         }
 
         // Save user info
-        const saveUserInfo ={
-            displayName: name,
-            email: email,
-            password: password,
-            role: "normal"
-        }
-
-        // Save user
-
+            const saveUserInfo ={
+                displayName: name,
+                email: email,
+                password: password || "",
+                role: "normal"
+            }
         // Manual create account
             signUpManually(name,email,password)
                 .then((result) => {
@@ -97,9 +105,7 @@ const SignUp = () => {
                         window.location.reload();
                     })
                 
-            }
-
-           
+            }   
     }
    
     return (

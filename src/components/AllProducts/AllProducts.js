@@ -29,7 +29,7 @@ const AllProducts = () => {
                     !isLoading && products.map(product => <Product key={product._id} data={product}></Product>)
                 }
                 {
-                    isLoading &&<div class="spinner-border text-danger p-4" role="status"><span class="visually-hidden">Loading...</span></div>
+                    isLoading &&<div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading...</span></div>
                        
                 }
                 

@@ -27,12 +27,15 @@ const Header = () => {
                         <li className="nav-item">
                             <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark" aria-current="page" to="/products">Products</NavLink>
                         </li>
-                        
+
                         {user && <li className="nav-item">
                          <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark me-4" to="/dashboard">Dashboard</NavLink>
                         </li>}
                         {!user && <li className="nav-item text-uppercase">
-                            <NavLink className="nav-link me-4 px-5 btn bg-pink ms-3" to="/login">Log in</NavLink>
+                            <NavLink className="nav-link px-5 btn bg-pink ms-3" to="/login">Log In</NavLink>
+                        </li>}
+                        {!user && <li className="nav-item text-uppercase">
+                            <NavLink className="nav-link me-4 px-5 btn bg-pink ms-3" to="/signup">Sign Up</NavLink>
                         </li>}
                         {user && <li className="nav-item text-uppercase" onClick={logOut}>
                             <NavLink className="nav-link me-3 btn bg-pink px-4" to="/login">Log out</NavLink>

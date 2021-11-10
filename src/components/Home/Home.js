@@ -49,7 +49,7 @@ const Home = () => {
                     !isLoading && products.map(service => <Service key={service._id} data={service}></Service>)
                 }
                 {
-                    isLoading &&<div class="spinner-border text-danger p-4" role="status"><span class="visually-hidden">Loading...</span></div>
+                    isLoading &&<div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading...</span></div>
                        
                 }
                 
