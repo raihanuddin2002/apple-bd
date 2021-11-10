@@ -2,6 +2,7 @@ import {getAuth, updateProfile  } from '@firebase/auth';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const SignUp = () => {
 
@@ -53,14 +54,22 @@ const SignUp = () => {
     const handleRegistration = (e) => {
         e.preventDefault();
 
-        console.log(name,email,password);
-
         // Password & confirm password match
         if(password !== confirmPassword){
             return setError("Password not matched!!");
         }else{
             setError('');
         }
+
+        // Save user info
+        const saveUserInfo ={
+            displayName: name,
+            email: email,
+            password: password,
+            role: "normal"
+        }
+
+        // Save user
 
         // Manual create account
             signUpManually(name,email,password)
@@ -70,7 +79,7 @@ const SignUp = () => {
                     .then(() => {
                         setSignUpMessage("Successful :)");
                         e.target.reset();
-                        window.location.reload();
+                        saveUser();
                     })
                     .catch((error) => {
                         setError(error.message);
@@ -79,7 +88,16 @@ const SignUp = () => {
                 })
                 .catch((error) => {
                     setError(error.message);
-                })
+                });
+
+            const saveUser = async() => {
+                axios.post('https://secret-tor-67063.herokuapp.com/saveUserInfo',{saveUserInfo})
+                    .then(res => {
+                        console.log("User inserted sucessfully done");
+                        window.location.reload();
+                    })
+                
+            }
 
            
     }
