@@ -1,12 +1,10 @@
 import {getAuth, updateProfile  } from '@firebase/auth';
 import React, { useState } from 'react';
-import { Link,useLocation,useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const SignUp = () => {
-    // History & location
-    const location = useLocation();
-    const history = useHistory();
+
     //const redirect_url = location.state?.from || "/home";
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
@@ -70,7 +68,7 @@ const SignUp = () => {
                     updateProfile(auth.currentUser, {
                     displayName: name})
                     .then(() => {
-                        setSignUpMessage("Your New Account Created Succufully :)");
+                        setSignUpMessage("Successful :)");
                         e.target.reset();
                         window.location.reload();
                     })
@@ -92,8 +90,8 @@ const SignUp = () => {
                 <div className="row row-cols-1 row-cols-lg-2">
                     <div className="col my-auto">
                         {signUpMessage && <h6 className="text-success text-end fs-5" role="alert">{signUpMessage}</h6>}
-                        {isLoading && <div class="spinner-border text-danger  p-3 float-end" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        {isLoading && <div className="spinner-border text-pink  p-3 float-end" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>}
                         <h1 className="mb-5 text-pink">SIGN UP</h1>
                         <form onSubmit={handleRegistration} className="border-0">

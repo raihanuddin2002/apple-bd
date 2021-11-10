@@ -60,8 +60,8 @@ const Login = () => {
             <div className="container text-start py-5 bg-white">
                 <div className="row row-cols-1 row-cols-lg-2">
                     <div className="col my-auto">
-                    {isLoading && <div class="spinner-border text-danger  p-3 float-end" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                    {isLoading && <div className="spinner-border text-pink  p-3 float-end" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>}
                         <h1 className="mb-5 text-pink">LOG IN</h1>
                         <form onSubmit={handleManualLogin} className="border-0">

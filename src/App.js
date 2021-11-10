@@ -9,11 +9,13 @@ import NotFound from './components/NotFound/NotFound';
 import OrderPlace from './components/OrderPlace/OrderPlace';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import About from './components/About/About';
-import MyOrders from './components/MyOrders/MyOrders';
-import AllOrders from './components/AllOrders/AllOrders';
-import AddService from './components/AddService/AddService';
+import MyOrders from './components/dashboard/MyOrders/MyOrders';
+import AllOrders from './components/dashboard/AllOrders/AllOrders';
+import AddService from './components/dashboard/AddService/AddService';
 import SignUp from './components/SignUp/SignUp';
 import AllProducts from './components/AllProducts/AllProducts';
+import Dashboard from './components/dashboard/DashBoard/Dashboard';
+import Pay from './components/dashboard/Pay/Pay';
 
 function App() {
   return (
@@ -35,6 +37,10 @@ function App() {
                   <AllProducts></AllProducts>
               </Route>
 
+              <PrivateRoute path="/dashboard">
+                  <Dashboard></Dashboard>
+              </PrivateRoute>
+
               <PrivateRoute path="/my-orders">
                   <MyOrders></MyOrders>
               </PrivateRoute>
@@ -45,6 +51,10 @@ function App() {
 
               <PrivateRoute path="/add-service">
                     <AddService></AddService>
+              </PrivateRoute>
+
+              <PrivateRoute path="/pay">
+                    <Pay></Pay>
               </PrivateRoute>
 
               <PrivateRoute  path="/orderPlace/:id">

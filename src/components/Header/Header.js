@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
@@ -19,28 +19,23 @@ const Header = () => {
 
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center fw-bold">
                     <li className="nav-item">
-                            <Link className="nav-link text-dark" aria-current="page" to="/home">Home</Link>
+                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark" aria-current="page" to="/home">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-dark" aria-current="page" to="/about">About</Link>
+                            <NavLink activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark" aria-current="page" to="/about">About</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-dark" aria-current="page" to="/products">Products</Link>
+                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark" aria-current="page" to="/products">Products</NavLink>
                         </li>
+                        
                         {user && <li className="nav-item">
-                         <Link className="nav-link text-dark" to="/my-orders">My Orders</Link>
-                        </li>}
-                        {user && <li className="nav-item">
-                         <Link className="nav-link text-dark" to="/manage-all-order">Manage All Orders</Link>
-                        </li>}
-                        {user && <li className="nav-item">
-                         <Link className="nav-link text-dark me-4" to="/add-service">Add Service</Link>
+                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark me-4" to="/dashboard">Dashboard</NavLink>
                         </li>}
                         {!user && <li className="nav-item text-uppercase">
-                            <Link className="nav-link me-4 px-5 btn bg-pink ms-3" to="/login">Log in</Link>
+                            <NavLink className="nav-link me-4 px-5 btn bg-pink ms-3" to="/login">Log in</NavLink>
                         </li>}
                         {user && <li className="nav-item text-uppercase" onClick={logOut}>
-                            <Link className="nav-link me-3 btn bg-pink px-4" to="/login">Log out</Link>
+                            <NavLink className="nav-link me-3 btn bg-pink px-4" to="/login">Log out</NavLink>
                         </li>}
                         {user && <li className="nav-item text-uppercase">
                             <h6 className="nav-link text-dark mt-2">{user?.displayName}</h6>

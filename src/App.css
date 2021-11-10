@@ -52,6 +52,18 @@
 .border-pink{
   border: 1px solid #ff7593 !important;
 }
+.scroll-div{
+  height: 95vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+  
 
 /* font-color */
 
@@ -123,6 +135,16 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
+/* Dashboard Menu */
+.dashboard-menu li:hover {
+  background-color: #f5cfd7;
+}
+/* .active{
+  background-color: #f5cfd7;
+}
+.selected{
+  color:#ff7593;
+} */
 
 @media only screen and (max-width: 991px) {
   .hero-header {
