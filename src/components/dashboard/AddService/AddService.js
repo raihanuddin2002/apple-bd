@@ -31,7 +31,6 @@ const AddService = () => {
             .then(res => {
                 if(res){
                     e.target.reset();
-                    console.log(res.data)
                     setLoading(false);
                 }
             }) 
