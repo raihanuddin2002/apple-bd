@@ -4,10 +4,17 @@ import User from './User/User';
 
 const MakeAdmin = () => {
     const [users, setUsers] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect( () => {
         axios.get('https://secret-tor-67063.herokuapp.com/users')
-            .then(res => setUsers(res.data))
+            .then(res => {
+                setLoading(true);
+                if(res){
+                    setUsers(res.data);
+                    setLoading(false);
+                }
+            })
     },[users]);
     return (
         <div>
@@ -26,6 +33,13 @@ const MakeAdmin = () => {
                             <tbody> 
                                 {
                                     users.map(user => <User key={user._id} data={user}></User>)
+                                }
+
+                                {
+                                    isLoading && <div className="text-center my-5">
+                                    <div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading...</span></div>
+                                    </div>
+                       
                                 }    
                             </tbody>
                         </table>
