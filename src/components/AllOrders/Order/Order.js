@@ -12,11 +12,11 @@ const Order = (props) => {
         } 
     }
     // Approve status
-    const handleOrderStatus = (id) => {
+    const handleOrderStatus = () => {
         const isConfirm = window.confirm("Are you sure to Approve this order?");
         
         if(isConfirm){
-            axios.put(`https://secret-tor-67063.herokuapp.com/products`,{id})
+            axios.put(`https://secret-tor-67063.herokuapp.com/products/${_id}`)
             .then(res => console.log("Your order Approved"));
         }
     }
@@ -32,7 +32,7 @@ const Order = (props) => {
                             <h5 className="mb-0">${price}</h5>
                             <p  className="m-0 mt-4">
                                 <button onClick={() => handleDelete(_id)} className="btn bg-pink btn-lg rounded-0 me-3">Delete</button>
-                                {(orderStatus === "Approved") ? "": <button onClick={() => handleOrderStatus(_id)} className="btn bg-pink btn-lg rounded-0">Approve</button> }
+                                {(orderStatus === "Approved") ? "": <button onClick={handleOrderStatus} className="btn bg-pink btn-lg rounded-0">Approve</button> }
                             </p>
                         </div>
 
