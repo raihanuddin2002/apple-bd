@@ -13,6 +13,7 @@ import MyOrders from './components/MyOrders/MyOrders';
 import AllOrders from './components/AllOrders/AllOrders';
 import AddService from './components/AddService/AddService';
 import SignUp from './components/SignUp/SignUp';
+import AllProducts from './components/AllProducts/AllProducts';
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
 
               <Route path="/about">
                   <About></About>
+              </Route>
+
+              <Route path="/products">
+                  <AllProducts></AllProducts>
               </Route>
 
               <PrivateRoute path="/my-orders">

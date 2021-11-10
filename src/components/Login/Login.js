@@ -56,14 +56,14 @@ const Login = () => {
 
     }
     return (
-        <div className="bg-dark py-5">
-            <div className="container text-start p-5 bg-white my-5">
-                <div className="row row-cols-lg-2">
+        <div>
+            <div className="container text-start py-5 bg-white">
+                <div className="row row-cols-1 row-cols-lg-2">
                     <div className="col my-auto">
-                    {isLoading && <div class="spinner-border text-primary float-end" role="status">
+                    {isLoading && <div class="spinner-border text-danger  p-3 float-end" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>}
-                        <h1 className="mb-5">Log In</h1>
+                        <h1 className="mb-5 text-pink">LOG IN</h1>
                         <form onSubmit={handleManualLogin} className="border-0">
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email address</label>
@@ -81,11 +81,11 @@ const Login = () => {
                         </form>
                     </div>
                     <div className="col">
-                        <h3 className="text-center d-none d-md-block">Get Started</h3>
                         <div className="d-none d-md-block">
                             <img className="img-fluid" src="https://i.ibb.co/cQJcWm8/gero-1.png" alt="" />
                         </div>
-                        <div className="text-center d-flex">
+                        <div className="text-center">
+                            <h3 className="text-center d-none d-md-block mt-4">Get Started</h3>
                             <button  onClick={handleGoogleSignIn} className="btn btn-dark w-100 me-2">Google</button>
                         </div>
                     </div>

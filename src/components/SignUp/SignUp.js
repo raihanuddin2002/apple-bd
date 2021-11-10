@@ -87,15 +87,15 @@ const SignUp = () => {
     }
    
     return (
-        <div className="bg-dark py-5">
-            <div className="container text-start p-5 bg-white my-5">
-                <div className="row row-cols-lg-2">
+        <div>
+            <div className="container text-start py-5 bg-white">
+                <div className="row row-cols-1 row-cols-lg-2">
                     <div className="col my-auto">
                         {signUpMessage && <h6 className="text-success text-end fs-5" role="alert">{signUpMessage}</h6>}
-                        {isLoading && <div class="spinner-border text-primary float-end" role="status">
+                        {isLoading && <div class="spinner-border text-danger  p-3 float-end" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>}
-                        <h1 className="mb-5">Sign Up</h1>
+                        <h1 className="mb-5 text-pink">SIGN UP</h1>
                         <form onSubmit={handleRegistration} className="border-0">
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Your Name</label>
@@ -116,17 +116,17 @@ const SignUp = () => {
                             <h6 className="mb-3 text-danger">{error}</h6>
                             <button type="submit" className="btn bg-pink px-5 py-3 text-uppercase">Sign Up</button>
                             <div className="my-3 text-center">
-                              <Link to="/login"><span>Already has an account?</span></Link>
+                              <Link to="/login"><span className="text-pink">Already has an account?</span></Link>
                             </div>
                         </form>
                     </div>
                     <div className="col">
-                    <h3 className="text-center d-none d-md-block">Get Started</h3>
                         <div className="d-none d-md-block text-center">
                             <img className="img-fluid mx-auto" src="https://i.ibb.co/4d0hycb/Apple-iphone13-hero-09142021-inline-jpg-large-removebg-preview.png" alt="" />
                         </div>
                        
-                        <div className="text-center d-flex">
+                        <div className="text-center">
+                            <h3 className="text-center d-none d-md-block mt-4">Get Started</h3>
                             <button onClick={handleGoogleSignIn} className="btn btn-dark w-100 me-2">Google</button>
                         </div>
                     </div>

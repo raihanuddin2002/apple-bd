@@ -24,6 +24,9 @@ const Header = () => {
                         <li className="nav-item">
                             <Link className="nav-link text-dark" aria-current="page" to="/about">About</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-dark" aria-current="page" to="/products">Products</Link>
+                        </li>
                         {user && <li className="nav-item">
                          <Link className="nav-link text-dark" to="/my-orders">My Orders</Link>
                         </li>}
@@ -34,7 +37,7 @@ const Header = () => {
                          <Link className="nav-link text-dark me-4" to="/add-service">Add Service</Link>
                         </li>}
                         {!user && <li className="nav-item text-uppercase">
-                            <Link className="nav-link me-4 px-5 btn bg-pink" to="/login">Log in</Link>
+                            <Link className="nav-link me-4 px-5 btn bg-pink ms-3" to="/login">Log in</Link>
                         </li>}
                         {user && <li className="nav-item text-uppercase" onClick={logOut}>
                             <Link className="nav-link me-3 btn bg-pink px-4" to="/login">Log out</Link>

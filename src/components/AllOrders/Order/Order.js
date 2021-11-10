@@ -16,23 +16,23 @@ const Order = (props) => {
         const isConfirm = window.confirm("Are you sure to Approve this order?");
         
         if(isConfirm){
-            axios.put(`https://damp-cliffs-56350.herokuapp.com/services`,{id})
+            axios.put(`https://damp-cliffs-56350.herokuapp.com/products`,{id})
             .then(res => console.log("Your order Approved"));
         }
     }
     return (
         <div>
             <div className="col d-flex justify-content-center align-items-stretch">
-                    <div className="row border border-warning w-100">
+                    <div className="row border-pink w-100">
                         <div className="col-lg-6 p-5 ourservice-article">
                             <img className="img-fluid mb-3" srcSet={picture} alt="" width="400" height="200"/>
                             <h3 className="text-uppercase">{name}</h3>
                             <p>{description}</p>
-                            <p><span className="fw-bold"><i className="fas fa-star fs-5 text-warning"></i> {rating}</span>({people})</p>
+                            <p><span className="fw-bold"><i className="fas fa-star fs-5 text-pink"></i> {rating}</span>({people})</p>
                             <h5 className="mb-0">${price}</h5>
                             <p  className="m-0 mt-4">
-                                <button onClick={() => handleDelete(_id)} className="btn btn-warning btn-lg rounded-0 me-3">Delete</button>
-                                {(orderStatus === "Approved") ? "": <button onClick={() => handleOrderStatus(_id)} className="btn btn-warning btn-lg rounded-0">Approve</button> }
+                                <button onClick={() => handleDelete(_id)} className="btn bg-pink btn-lg rounded-0 me-3">Delete</button>
+                                {(orderStatus === "Approved") ? "": <button onClick={() => handleOrderStatus(_id)} className="btn btn-pink btn-lg rounded-0">Approve</button> }
                             </p>
                         </div>
 

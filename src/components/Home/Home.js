@@ -3,15 +3,15 @@ import React, { useEffect, useState } from 'react';
 import Service from './Service/Service';
 
 const Home = () => {
-    const [services, setServices] = useState([]);
+    const [products, setproducts] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
     useEffect( () => {
-        axios.get("https://secret-tor-67063.herokuapp.com/services")
+        axios.get("https://secret-tor-67063.herokuapp.com/products")
             .then(res => {
                 setLoading(true);
                 if(res){
-                    setServices(res.data);
+                    setproducts(res.data);
                     setLoading(false);
                 }
             })
@@ -36,7 +36,7 @@ const Home = () => {
             </div>
         </section>
 
-        {/* Services */}
+        {/* products */}
         <section className="container">
             <div className="blank d-none d-md-block"  style={{height:"50px"}}></div>
             <h5 className="text-gray text-center">Products</h5>
@@ -45,19 +45,10 @@ const Home = () => {
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
 
                 {
-                    !isLoading && services.map(service => <Service key={service._id} data={service}></Service>)
+                    !isLoading && products.map(service => <Service key={service._id} data={service}></Service>)
                 }
                 {
-                    isLoading &&<div> <h1 className="text-center">Loading...  
-                            <div className="spinner-grow text-primary" role="status"></div>
-                            <div className="spinner-grow text-secondary" role="status"></div>
-                            <div className="spinner-grow text-success" role="status"> </div>
-                            <div className="spinner-grow text-danger" role="status"></div>
-                            <div className="spinner-grow text-warning" role="status"></div>
-                            <div className="spinner-grow text-info" role="status">
-                            </div>
-                            <div className="spinner-grow text-dark" role="status"></div>
-                            </h1> </div>
+                    isLoading &&<div class="spinner-border text-danger p-4" role="status"><span class="visually-hidden">Loading...</span></div>
                        
                 }
                 
