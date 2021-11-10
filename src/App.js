@@ -41,22 +41,6 @@ function App() {
                   <Dashboard></Dashboard>
               </PrivateRoute>
 
-              <PrivateRoute path="/my-orders">
-                  <MyOrders></MyOrders>
-              </PrivateRoute>
-
-              <PrivateRoute path="/manage-all-order">
-                  <AllOrders></AllOrders>
-              </PrivateRoute>
-
-              <PrivateRoute path="/add-service">
-                    <AddService></AddService>
-              </PrivateRoute>
-
-              <PrivateRoute path="/pay">
-                    <Pay></Pay>
-              </PrivateRoute>
-
               <PrivateRoute  path="/orderPlace/:id">
                   <OrderPlace></OrderPlace>
               </PrivateRoute>

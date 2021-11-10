@@ -62,8 +62,7 @@
 ::-webkit-scrollbar {
   display: none;
 }
-
-  
+ 
 
 /* font-color */
 
@@ -139,12 +138,9 @@ body {
 .dashboard-menu li:hover {
   background-color: #f5cfd7;
 }
-/* .active{
-  background-color: #f5cfd7;
+.main-nav li a:focus{
+  color: #ff7593 !important;
 }
-.selected{
-  color:#ff7593;
-} */
 
 @media only screen and (max-width: 991px) {
   .hero-header {

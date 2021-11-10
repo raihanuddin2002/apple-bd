@@ -17,19 +17,19 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                    
 
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center fw-bold">
+                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center fw-bold main-nav">
                     <li className="nav-item">
-                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark" aria-current="page" to="/home">Home</NavLink>
+                            <NavLink className="nav-link text-dark" aria-current="page" to="/home">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark" aria-current="page" to="/about">About</NavLink>
+                            <NavLink className="nav-link text-dark" aria-current="page" to="/about">About</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark" aria-current="page" to="/products">Products</NavLink>
+                            <NavLink  className="nav-link text-dark" aria-current="page" to="/products">Products</NavLink>
                         </li>
 
                         {user && <li className="nav-item">
-                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark me-4" to="/dashboard">Dashboard</NavLink>
+                         <NavLink className="nav-link text-dark me-4" to="/dashboard">Dashboard</NavLink>
                         </li>}
                         {!user && <li className="nav-item text-uppercase">
                             <NavLink className="nav-link px-5 btn bg-pink ms-3" to="/login">Log In</NavLink>

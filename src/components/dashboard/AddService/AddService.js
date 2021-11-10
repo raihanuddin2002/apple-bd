@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useRef, useState } from 'react';
-import Menu from '../DashBoard/Menu/Menu';
 
 const AddService = () => {
     const titleRef = useRef("");
@@ -40,13 +39,7 @@ const AddService = () => {
     return (
         <div className="container">
             <div className="row">
-                <h2 className="py-2 mt-3 mt-lg-5 display-3 bg-light-pink text-center mb-4">DashBoard</h2>
-                
-                <div className="col-sm-12 col-lg-2 ps-lg-0">
-                    <h5 className="d-none d-lg-block card-header text-center display-4 bg-light-pink fixed">Menu</h5>
-                    <Menu></Menu>
-                </div>
-                <div className="col-sm-12 col-lg-10 pe-lg-0 scroll-div">
+                <div className="col pe-lg-0 scroll-div">
                     <h5 className="card-header text-center display-4 bg-light-pink">MY ORDERS</h5>
                     <div style={{width:"100%"}} className="row row-cols-1 gy-4 mt-2 mb-5 mx-auto">
                         <form onSubmit={handleForm} className="border border-pink p-5">
