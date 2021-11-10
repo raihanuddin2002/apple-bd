@@ -7,7 +7,7 @@ const AllOrders = () => {
     const [isLoading, setLoading] = useState(true);
 
     useEffect( () => {
-        axios.get(`https://damp-cliffs-56350.herokuapp.com/allOrders`)
+        axios.get(`https://secret-tor-67063.herokuapp.com/allOrders`)
             .then(res => {
                 setLoading(true);
                 if(res){
