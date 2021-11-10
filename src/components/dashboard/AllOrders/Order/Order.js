@@ -41,7 +41,7 @@ const Order = (props) => {
                             <h1 className="">USER INFO</h1>
                             <hr />
                             <h3 className="text-uppercase">Name: {displayName}</h3>
-                            <h5 className="mb-3">Email: {email}</h5>
+                            <h6 className="mb-3 text-wrap">Email: {email}</h6>
                             <p className="mb-0">Adress: {address}</p>
                             <p className="mb-0">Phone: {phone}</p>
                             <p>Id: {_id}</p>

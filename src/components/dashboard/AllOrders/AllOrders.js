@@ -18,9 +18,8 @@ const AllOrders = () => {
     },[products]);
     
     return (
-        <div className="container">
-        <div className="row">
-            <div className="col pe-lg-0 scroll-div">
+        <div className="row text-wrap">
+            <div className="col">
                 <h5 className="card-header text-center display-4 bg-light-pink">ALL ORDERS</h5>
                 <div className="row row-cols-1 gy-4 mt-2 mb-5">
                     {
@@ -34,8 +33,7 @@ const AllOrders = () => {
                     }
                 </div>
             </div>
-        </div>
-    </div>   
+        </div> 
     );
 }
 export default AllOrders;

@@ -13,7 +13,7 @@ const OurService = (props) => {
     }
     return (
         <div className="col d-flex justify-content-center align-items-stretch">
-            <div className="row border border-pink w-100">
+            <div className="row border border-pink">
                 <div className="col-lg-6 p-5 ourservice-article">
                     <img className="img-fluid mb-3" srcSet={picture} alt="" width="400" height="200"/>
                     <h3 className="text-uppercase">{name}</h3>
@@ -28,7 +28,7 @@ const OurService = (props) => {
                     <h1 className="">USER INFO</h1>
                     <hr />
                     <h3 className="text-uppercase">Name: {displayName}</h3>
-                    <h5 className="mb-3">Email: {email}</h5>
+                    <h6 className="mb-3">Email: {email}</h6>
                     <p className="mb-0">Adress: {address}</p>
                     <p className="mb-0">Phone: {phone}</p>
                     <p>Id: {_id}</p>

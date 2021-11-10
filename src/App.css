@@ -52,17 +52,7 @@
 .border-pink{
   border: 1px solid #ff7593 !important;
 }
-.scroll-div{
-  height: 95vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
-}
-::-webkit-scrollbar {
-  display: none;
-}
- 
+
 
 /* font-color */
 

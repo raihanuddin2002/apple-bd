@@ -56,7 +56,7 @@ const ServiceDetails = () => {
                 setSucess("Order Placed sucessfully :)");
                 e.target.reset();
                 setTimeout( () => {
-                history.push('/my-orders')
+                history.push('/dashboard/my-orders')
                 },3000);
             });
     }
