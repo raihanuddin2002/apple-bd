@@ -2,10 +2,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Service from './Service/Service';
+import ShowReview from './ShowReview/ShowReview';
 
 const Home = () => {
     const [products, setproducts] = useState([]);
     const [isLoading, setLoading] = useState(true);
+    const [isReviewLoading, setReviewLoading] = useState(true);
+    const [reviews,setReviews] = useState([]);
 
     useEffect( () => {
         axios.get("https://secret-tor-67063.herokuapp.com/productsLimit")
@@ -17,6 +20,16 @@ const Home = () => {
                 }
             })
     },[])
+    useEffect( () => {
+        axios.get("https://secret-tor-67063.herokuapp.com/review")
+            .then(res => {
+                setLoading(true);
+                if(res){
+                    setReviews(res.data);
+                    setReviewLoading(false);
+                }
+            })
+    },[reviews])
 
     return (
         <div>
@@ -107,8 +120,72 @@ const Home = () => {
                 <div className="blank d-none d-md-block"  style={{height:"50px"}}></div>
             </section>
 
-       
-   
+       {/* Show reviews */}
+        <section className="container my-5">
+            <div className="text-center">
+                <h5 className="text-gray">REVIEWS</h5>
+                <h1 className="fs-1 ff-volkhob fw-bold mb-5">Show Users Review</h1>
+            </div>
+
+            <div className="row align-items-center">
+                <div style={{height: "40vh", background:"#d3d3d34a"}} className="col-md-6 overflow-scroll py-5">
+                    {
+                        reviews.map(review => <ShowReview key={review._id} data={review}></ShowReview>)
+                    }
+                    {
+                        isReviewLoading &&<div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading...</span></div> 
+                    }
+                </div>
+                <div className="col-md-6">
+                <div className="accordion" id="accordionExample">
+                    <div className="accordion-item">
+                        <h2 className="accordion-header" id="headingOne">
+                        <button className="accordion-button text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            How We works?
+                        </button>
+                        </h2>
+                        <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                        WeWork is simply an office-leasing company. It makes money by renting office space. ... It rents desks to individuals or groups who want the benefits of a fully stocked office without the expense of a full office. Members include independent freelancers and remote workers who need an occasional office away from home.
+                        </div>
+                        </div>
+                    </div>
+                    <div className="accordion-item">
+                        <h2 className="accordion-header" id="headingTwo">
+                        <button className="accordion-button collapsed text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            How to use this site?
+                        </button>
+                        </h2>
+                        <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            <ol>
+                                <li>Open Sites.</li>
+                                <li>Login to see all services</li>
+                                <li>In dashboard you can see your orders</li>
+                                <li>You can reviw our Products in dashboard/review page</li>
+                                <li>Click “Send” when you're done.</li>
+                                <li> Let others view or edit your website</li>
+                            </ol>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="accordion-item">
+                        <h2 className="accordion-header" id="headingThree">
+                        <button className="accordion-button collapsed text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How to see Users Review?
+                        </button>
+                        </h2>
+                        <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            In your left side or top(small device). There you can all reviews. Scroll to see all reviews. It is scrollable.
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+               
+            </div>
+        </section>
 
             {/* <!-- Testimonial section --> */}
         <section className="container my-5">

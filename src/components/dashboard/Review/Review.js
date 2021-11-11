@@ -22,6 +22,7 @@ const Review = () => {
             if(res){
                 setLoading(false);
                 console.log("Review Inserted");
+                e.target.reset();
             }
         });
 
