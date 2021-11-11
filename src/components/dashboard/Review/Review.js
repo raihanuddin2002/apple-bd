@@ -1,7 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
+import axios from 'axios';
 
 const Review = () => {
+    const [isLoading, setLoading] = useState(false);
     const rateRef = useRef('0');
     const commentRef = useRef('');
 
@@ -15,6 +17,14 @@ const Review = () => {
         const review = {
             name: user?.displayName,rating: rate, comment: comment
         }
+        setLoading(true);
+        axios.post('https://secret-tor-67063.herokuapp.com/reviews',{review}).then(res => {
+            if(res){
+                setLoading(false);
+                console.log("Review Inserted");
+            }
+        });
+
     }
     return (
         <div>
@@ -28,7 +38,14 @@ const Review = () => {
 
                             <label htmlFor="" className="mb-2 fw-bold">Comments</label>
                             <textarea ref={commentRef} className="w-100" name="" id="" rows="10" placeholder=" Write Comment.." required></textarea>
-                           <button className="btn bg-pink px-5 py-2 mt-2" type="submit">Send</button>
+                            <div className="d-flex justify-content-between">
+                                <button className="btn bg-pink px-5 py-2 mt-2" type="submit">Send</button>
+                                {
+                                    isLoading && <div className="text-end">
+                                        <div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading...</span></div>
+                                    </div>
+                                }
+                            </div>
                         </form>
                     </div>
                         
