@@ -19,7 +19,7 @@ const Home = () => {
                     setLoading(false);
                 }
             })
-    },[])
+    },[reviews]);
     useEffect( () => {
         axios.get("https://secret-tor-67063.herokuapp.com/review")
             .then(res => {
@@ -29,7 +29,7 @@ const Home = () => {
                     setReviewLoading(false);
                 }
             })
-    },[reviews])
+    },[])
 
     return (
         <div>
@@ -128,12 +128,12 @@ const Home = () => {
             </div>
 
             <div className="row align-items-center">
-                <div style={{height: "40vh", background:"#d3d3d34a"}} className="col-md-6 overflow-scroll py-5">
+                <div style={{height: "40vh", background:"#d3d3d34a"}} className="col-md-6 overflow-scroll scroll-div py-5">
                     {
                         reviews.map(review => <ShowReview key={review._id} data={review}></ShowReview>)
                     }
                     {
-                        isReviewLoading &&<div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading...</span></div> 
+                        isReviewLoading &&<div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading... </span></div> 
                     }
                 </div>
                 <div className="col-md-6">
