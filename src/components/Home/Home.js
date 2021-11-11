@@ -124,7 +124,7 @@ const Home = () => {
         <section className="container my-5">
             <div className="text-center">
                 <h5 className="text-gray">REVIEWS</h5>
-                <h1 className="fs-1 ff-volkhob fw-bold mb-5">Show Users Review</h1>
+                <h1 className="fs-1 ff-volkhob fw-bold mb-5">See Users Review</h1>
             </div>
 
             <div className="row align-items-center">
