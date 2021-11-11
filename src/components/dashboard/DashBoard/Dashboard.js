@@ -43,25 +43,25 @@ const Dashboard = () => {
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent1">
                                     <ul className="navbar-nav d-flex flex-column w-100 dashboard-menu">
                                         <li className="nav-item">
-                                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom" to={`${url}/pay`}>Pay</NavLink>
+                                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/pay`}>Pay</NavLink>
                                         </li>
                                         <li className="nav-item border-bottom">
-                                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark" to={`${url}/my-orders`}>My Orders</NavLink>
+                                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/my-orders`}>My Orders</NavLink>
                                         </li>
                                        {thisUser?.role === "admin" ? <li className="nav-item">
-                                        <NavLink activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom" to={`${url}/manage-all-order`}>Manage All Orders</NavLink>
+                                        <NavLink activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-all-order`}>Manage All Orders</NavLink>
                                         </li> : ""}
                                     
                                         {thisUser?.role === "admin" ? <li className="nav-item">
-                                        <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom" to={`${url}/add-service`}>Add Service</NavLink>
+                                        <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/add-service`}>Add Service</NavLink>
                                         </li> : ""}
 
                                         {thisUser?.role === "admin" ? <li className="nav-item">
-                                        <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom" to={`${url}/make-admin`}>Make Admin</NavLink>
+                                        <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/make-admin`}>Make Admin</NavLink>
                                         </li> : ""}
 
                                         {thisUser?.role === "admin" ? <li className="nav-item">
-                                        <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom" to={`${url}/manage-products`}>Manage Products</NavLink>
+                                        <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-products`}>Manage Products</NavLink>
                                         </li> : ""}
                                     </ul>
                                 </div>

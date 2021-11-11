@@ -95,7 +95,7 @@ const SignUp = () => {
                     setError(error.message);
                 });
 
-            const saveUser = async() => {
+            const saveUser = () => {
                 axios.post('https://secret-tor-67063.herokuapp.com/saveUserInfo',{saveUserInfo})
                     .then(res => {
                         console.log("User inserted sucessfully done");

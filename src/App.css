@@ -52,7 +52,13 @@
 .border-pink{
   border: 1px solid #ff7593 !important;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
 
 /* font-color */
 

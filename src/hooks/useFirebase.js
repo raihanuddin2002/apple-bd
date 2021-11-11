@@ -31,6 +31,7 @@ const useFirebase = () => {
     // Sign up manually
     const signUpManually = (email,password) => {
       setIsLoading(true);
+      console.log(email,password);
       // Manual signup
       return createUserWithEmailAndPassword(auth, email, password)
                 .finally( () => {
