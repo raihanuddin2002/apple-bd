@@ -1,12 +1,10 @@
 import {getAuth, updateProfile  } from '@firebase/auth';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 
 const SignUp = () => {
-
-    //const redirect_url = location.state?.from || "/home";
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -17,13 +15,12 @@ const SignUp = () => {
     const {signInWithGoogle,signUpManually,isLoading} = useAuth();
     const auth =getAuth();
 
-    // Google Sign Up
     const handleGoogleSignIn = () => {
         signInWithGoogle()
-            .then((result) => {
+            .then( async(result) => {
                 const name = result.user.displayName;
                 const email = result.user.email;
-                saveUserGoogle(name, email);
+                saveUserGoogle(name,email);
                 setSignUpMessage("Sign Up Successful :)")
 
             }).catch((error) => {
@@ -35,7 +32,7 @@ const SignUp = () => {
     // Saved google user
     const saveUserGoogle = (name,email) => {
         const saveUserInfo ={
-            name: name, email: email, password: "", role:"normal"
+            name: name, email: email, password: ""
         }
         axios.put('https://secret-tor-67063.herokuapp.com/saveUserInfo',{saveUserInfo})
             .then(res => console.log("Google User inserted sucessfully done"))

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { GoogleAuthProvider,signInWithPopup,signInWithEmailAndPassword,createUserWithEmailAndPassword,onAuthStateChanged,signOut } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { useState } from "react";
+import axios from 'axios';
 import initializeAuthentication from "../Atuhentication/firebase.init";
 
 initializeAuthentication();
@@ -11,6 +12,7 @@ const useFirebase = () => {
     const [user,setUser] = useState('');
     const [error,setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [thisUser, setThisUser] = useState('');
 
     const auth = getAuth();
     
@@ -73,9 +75,19 @@ const useFirebase = () => {
           });
       },[]);
 
+      // Load admin User
+      useEffect( () => {
+        axios.post(`https://secret-tor-67063.herokuapp.com/users/${user.email}`)
+            .then(res => {
+                if(res){
+                  setThisUser(res.data);
+                }
+            });
+      },[user]);
     return {
         user,
         error,
+        thisUser,
         signInWithGoogle,
         signUpManually,
         logInManually,

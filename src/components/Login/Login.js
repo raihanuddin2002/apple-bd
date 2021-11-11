@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation,useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const Login = () => {
     const [email,setEmail] = useState('');
@@ -31,12 +32,23 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
         .then((result) => {
+                const name = result.user.displayName;
+                const email = result.user.email;
+                saveUserGoogle(name,email);
                  history.push(redirect_url);
   
             }).catch((error) => {
                 setError(error.message);
                 // ...
             })
+    }
+     // Saved google user
+     const saveUserGoogle = (name,email) => {
+        const saveUserInfo ={
+            name: name, email: email, password: ""
+        }
+        axios.put('https://secret-tor-67063.herokuapp.com/saveUserInfo',{saveUserInfo})
+            .then(res => console.log("Google User inserted sucessfully done"))
     }
     //manual login
     const handleManualLogin = (e) => {
