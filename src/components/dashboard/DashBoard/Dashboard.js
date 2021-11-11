@@ -51,17 +51,17 @@ const Dashboard = () => {
                                        {thisUser?.role === "admin" ? <li className="nav-item">
                                         <NavLink activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-all-order`}>Manage All Orders</NavLink>
                                         </li> : ""}
-                                    
+
                                         {thisUser?.role === "admin" ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/add-service`}>Add Service</NavLink>
                                         </li> : ""}
 
                                         {thisUser?.role === "admin" ? <li className="nav-item">
-                                        <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/make-admin`}>Make Admin</NavLink>
-                                        </li> : ""}
-
-                                        {thisUser?.role === "admin" ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-products`}>Manage Products</NavLink>
+                                        </li> : ""}
+                                        
+                                        {thisUser?.role === "admin" ? <li className="nav-item">
+                                        <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/make-admin`}>Make Admin</NavLink>
                                         </li> : ""}
                                     </ul>
                                 </div>
