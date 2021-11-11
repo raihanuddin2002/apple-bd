@@ -35,7 +35,7 @@ const Ourservices = () => {
                         </div>
                     }
                     {
-                    services && services.map(service => <OurOrder key={service._id} data={service}></OurOrder>)
+                        services && services.map(service => <OurOrder key={service._id} data={service}></OurOrder>)
                     }
 
                 </div>

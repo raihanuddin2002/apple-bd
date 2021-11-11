@@ -21,19 +21,22 @@ function App() {
   return (
     <AuthProvider>
         <BrowserRouter>
-            <Header></Header>
+            
 
           <Switch>
 
               <Route path="/home">
+                <Header></Header>
                   <Home></Home>
               </Route>
 
               <Route path="/about">
+                    <Header></Header>
                   <About></About>
               </Route>
 
               <Route path="/products">
+                    <Header></Header>
                   <AllProducts></AllProducts>
               </Route>
 
@@ -42,22 +45,27 @@ function App() {
               </PrivateRoute>
 
               <PrivateRoute  path="/orderPlace/:id">
+                <Header></Header>
                   <OrderPlace></OrderPlace>
               </PrivateRoute>
 
               <Route path="/login">
+                <Header></Header>
                   <Login></Login>
               </Route>
 
               <Route path="/signup">
+                <Header></Header>
                   <SignUp></SignUp>
               </Route>
 
               <Route exact path="/">
+                <Header></Header>
                   <Home></Home>
               </Route>
 
               <Route path="*">
+                <Header></Header>
                   <NotFound></NotFound>
               </Route>
 

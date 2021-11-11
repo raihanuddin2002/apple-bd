@@ -19,7 +19,7 @@ const ManageProducts = () => {
         <div>
             {/* Manage All products */}
         <section>
-            <h2 className="py-2 display-3 bg-light-pink text-center">MANAGE PRODUCTS</h2>
+            <h2 className="py-2 display-4 bg-light-pink text-center">MANAGE PRODUCTS</h2>
             <div className="blank mb-5"></div>
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
 

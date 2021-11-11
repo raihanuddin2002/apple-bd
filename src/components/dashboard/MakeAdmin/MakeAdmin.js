@@ -20,7 +20,7 @@ const MakeAdmin = () => {
         <div>
             <div className="row">
                 <div className="col">
-                    <h5 className="card-header text-center display-4 bg-light-pink mb-3">MAKE ADMIN</h5>
+                    <h5 className="card-header text-center display-5 bg-light-pink mb-3 py-2">MAKE ADMIN</h5>
                     <div className="overflow-scroll scrollbar-hide">
                         <table className="table">
                             <thead>

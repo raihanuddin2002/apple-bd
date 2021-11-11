@@ -5,7 +5,6 @@ import {
     NavLink,
     useRouteMatch
   } from "react-router-dom";
-import axios from 'axios';
 import Pay from '../Pay/Pay';
 import MyOrders from '../MyOrders/MyOrders';
 import AllOrders from '../AllOrders/AllOrders';
@@ -14,10 +13,11 @@ import useAuth from '../../../hooks/useAuth';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import DashPrivateRoute from './DashPrivateRoute/DashPrivateRoute';
+import Review from '../Review/Review';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
-    const {user, logOut, thisUser} = useAuth();
+    const {logOut, thisUser} = useAuth();
     
     return (
         <div className="container">
@@ -43,10 +43,16 @@ const Dashboard = () => {
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent1">
                                     <ul className="navbar-nav d-flex flex-column w-100 dashboard-menu">
                                         <li className="nav-item">
+                                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to="/home">Back to Home</NavLink>
+                                        </li>
+                                        <li className="nav-item">
                                             <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/pay`}>Pay</NavLink>
                                         </li>
                                         <li className="nav-item border-bottom">
-                                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/my-orders`}>My Orders</NavLink>
+                                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark px-4" to={`${url}/my-orders`}>My Orders</NavLink>
+                                        </li>
+                                        <li className="nav-item border-bottom">
+                                            <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/review`}>Review</NavLink>
                                         </li>
                                        {thisUser?.role === "admin" ? <li className="nav-item">
                                         <NavLink activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-all-order`}>Manage All Orders</NavLink>
@@ -59,10 +65,14 @@ const Dashboard = () => {
                                         {thisUser?.role === "admin" ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-products`}>Manage Products</NavLink>
                                         </li> : ""}
-                                        
+
                                         {thisUser?.role === "admin" ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/make-admin`}>Make Admin</NavLink>
                                         </li> : ""}
+
+                                        <li className="nav-item text-uppercase" onClick={logOut}>
+                                            <div className="nav-link bg-pink px-4">Log out</div>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -79,6 +89,9 @@ const Dashboard = () => {
                         </Route>
                         <Route path={`${path}/my-orders`}>
                             <MyOrders></MyOrders>
+                        </Route>
+                        <Route path={`${path}/review`}>
+                            <Review></Review>
                         </Route>
                         <DashPrivateRoute path={`${path}/manage-all-order`}>
                             <AllOrders></AllOrders>
