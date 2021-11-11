@@ -128,7 +128,7 @@ const Home = () => {
             </div>
 
             <div className="row align-items-center">
-                <div style={{height: "40vh", background:"#d3d3d34a"}} className="col-md-6 overflow-scroll scroll-div py-5">
+                <div style={{height: "40vh", background:"#d3d3d34a"}} className="col-md-6 overflow-scroll scrollbar-hide py-5">
                     {
                         reviews.map(review => <ShowReview key={review._id} data={review}></ShowReview>)
                     }
