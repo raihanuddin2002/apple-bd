@@ -20,25 +20,25 @@ const Dashboard = () => {
     const {logOut, thisUser} = useAuth();
     
     return (
+        <div>
+            <h2 className="d-none d-lg-block py-2 display-3 bg-light-pink text-center mb-4">DashBoard</h2>
         <div className="container">
             <div className="row">
-                <h2 className="d-none d-lg-block py-2 mt-3 mt-lg-5 display-3 bg-light-pink text-center mb-4">DashBoard</h2>
-                
                 <div className="col-sm-12 col-lg-2 ps-lg-0">
                     <div className="position-sticky top-0">
                         <h3 className="d-none d-lg-block card-header text-center bg-light-pink py-4">Menu</h3>
                         <nav className="navbar navbar-expand-lg navbar-light">
                             <div className="w-100">
-                            <div className="row align-items-center py-3 d-lg-none">
-                                    <div className="col-3">
-                                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                            <span className="navbar-toggler-icon"></span>
-                                        </button>
-                                    </div>
-                                    
-                                    <div className="col-9 d-lg-none">
-                                        <h2 className="display-3">DashBoard</h2>
-                                    </div>
+                            <div className="row align-items-center py-3 d-lg-none px-3">
+                                <div className="col-6 d-lg-none">
+                                    <h2 className="display-3">DashBoard</h2>
+                                </div>
+
+                                <div className="col-6  text-end">
+                                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span className="navbar-toggler-icon"></span>
+                                    </button>
+                                </div>
                             </div>
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent1">
                                     <ul className="navbar-nav d-flex flex-column w-100 dashboard-menu">
@@ -110,6 +110,7 @@ const Dashboard = () => {
                     </Switch>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
