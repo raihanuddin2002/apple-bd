@@ -15,7 +15,7 @@ const Review = () => {
         const comment = commentRef.current.value;
 
         const review = {
-            name: user?.displayName,rating: rate, comment: comment
+            email: user?.email,rating: rate, comment: comment
         }
         setLoading(true);
         axios.post('https://secret-tor-67063.herokuapp.com/reviews',{review}).then(res => {
