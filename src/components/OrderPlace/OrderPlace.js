@@ -16,7 +16,7 @@ const ServiceDetails = () => {
 
     const [memory, setMemory] = useState(0);
     const [storage, setStorage] = useState(0);
-    const [delivery, setDelivery] = useState(0);
+    const [delivery, setDelivery] = useState(10);
     const [memoryType, setMemoryType] = useState("4GB");
     const [storageType, setStorageType] = useState("256GB");
     const [deliveryType, setDeliveryType] = useState("7");
@@ -117,8 +117,8 @@ const ServiceDetails = () => {
                         <div className="delivery mb-4">
                             <h6>Choose your delivery option</h6>
                             <div id="delivery-buttons">
-                                <button  onClick={() => {setDelivery(0); setDeliveryType('7')}} type="button" className="btn bg-pink me-2 mb-sm-2 mb-lg-0">7 days delivery</button>
-                                <button  onClick={() => {setDelivery(10); setDeliveryType('3')}} type="button" className="btn bg-pink">3 days Delivery</button>
+                                <button  onClick={() => {setDelivery(10); setDeliveryType('7')}} type="button" className="btn bg-pink me-2 mb-sm-2 mb-lg-0">7 days delivery</button>
+                                <button  onClick={() => {setDelivery(30); setDeliveryType('3')}} type="button" className="btn bg-pink">3 days Delivery</button>
                             </div>
                         </div>
                         </div>
