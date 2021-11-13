@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 
 const OurService = (props) => {
-    const {_id,name,displayName,price,people,rating, description,email, address, picture, phone, orderStatus} = props.data;
+    const {_id,name,displayName,people,rating, description,email, address, picture, phone, orderStatus,totalCost,productQuantity,memoryType,storageType,deliveryType} = props.data;
 
     const handleDelete = (id) => {
         const isConfirm = window.confirm("Are you sure to delete your order?");
@@ -19,7 +19,7 @@ const OurService = (props) => {
                     <h3 className="text-uppercase">{name}</h3>
                     <p>{description}</p>
                     <p><span className="fw-bold"><i className="fas fa-star fs-5 text-pink"></i> {rating}</span>({people})</p>
-                    <h5 className="mb-0">${price}</h5>
+                    <h5 className="mb-0">${totalCost} <small><b>({productQuantity})</b></small></h5>
                     <p  className="m-0 mt-4"><button onClick={() => handleDelete(_id)} className="btn bg-pink btn-lg rounded-0">Delete</button></p>
                 </div>
 
@@ -33,6 +33,12 @@ const OurService = (props) => {
                     <p className="mb-0">Phone: {phone}</p>
                     <p>Id: {_id}</p>
                     
+                    <div className="mt-5">
+                        <h3>Spacifications</h3><hr />
+                        <p  className="mb-0">Memory: <b>{memoryType || "4GB"}</b></p>
+                        <p  className="mb-0">Storage: <b>{storageType || "128GB"}</b></p>
+                        <p  className="mb-0">Delivery: <b>{deliveryType || "7"} Days</b></p>
+                    </div>
                 </div>
 
             </div>
