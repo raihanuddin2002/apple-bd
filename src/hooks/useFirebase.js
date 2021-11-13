@@ -12,7 +12,7 @@ const useFirebase = () => {
     const [user,setUser] = useState('');
     const [error,setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
-    const [thisUser, setThisUser] = useState('');
+    const [admin, setAdmin] = useState('');
 
     const auth = getAuth();
     
@@ -81,14 +81,14 @@ const useFirebase = () => {
         axios.post(`https://secret-tor-67063.herokuapp.com/users/${user.email}`)
             .then(res => {
                 if(res){
-                  setThisUser(res.data);
+                  setAdmin(res.data);
                 }
             });
       },[user]);
     return {
         user,
         error,
-        thisUser,
+        admin,
         signInWithGoogle,
         signUpManually,
         logInManually,

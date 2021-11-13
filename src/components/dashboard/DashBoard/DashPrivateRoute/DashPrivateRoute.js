@@ -6,7 +6,7 @@ import {
 import useAuth from '../../../../hooks/useAuth';
 
 const DashPrivateRoute = ({children, ...rest}) => {
-    const {user,isLoading, thisUser} = useAuth();
+    const {user,isLoading, admin} = useAuth();
 
     if(isLoading){
       return (
@@ -24,7 +24,7 @@ const DashPrivateRoute = ({children, ...rest}) => {
         <Route
         {...rest}
         render={({ location }) =>
-          thisUser?.role === "admin" ? (
+          user.email && admin ? (
             children
           ) : (
             <Redirect

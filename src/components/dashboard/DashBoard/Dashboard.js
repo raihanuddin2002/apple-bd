@@ -14,10 +14,11 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import DashPrivateRoute from './DashPrivateRoute/DashPrivateRoute';
 import Review from '../Review/Review';
+import NotFound from '../../NotFound/NotFound';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
-    const {logOut, thisUser} = useAuth();
+    const {logOut, admin} = useAuth();
     
     return (
         <div>
@@ -54,19 +55,19 @@ const Dashboard = () => {
                                         <li className="nav-item border-bottom">
                                             <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/review`}>Review</NavLink>
                                         </li>
-                                       {thisUser?.role === "admin" ? <li className="nav-item">
+                                       {admin ? <li className="nav-item">
                                         <NavLink activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-all-order`}>Manage All Orders</NavLink>
                                         </li> : ""}
 
-                                        {thisUser?.role === "admin" ? <li className="nav-item">
+                                        {admin ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/add-service`}>Add Service</NavLink>
                                         </li> : ""}
 
-                                        {thisUser?.role === "admin" ? <li className="nav-item">
+                                        {admin ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-products`}>Manage Products</NavLink>
                                         </li> : ""}
 
-                                        {thisUser?.role === "admin" ? <li className="nav-item">
+                                        {admin ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/make-admin`}>Make Admin</NavLink>
                                         </li> : ""}
 
@@ -107,6 +108,7 @@ const Dashboard = () => {
                         <DashPrivateRoute path={`${path}/manage-products`}>
                             <ManageProducts></ManageProducts>
                         </DashPrivateRoute>
+
                     </Switch>
                 </div>
             </div>
