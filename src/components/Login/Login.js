@@ -78,12 +78,12 @@ const Login = () => {
                         <h1 className="mb-5 text-pink">LOG IN</h1>
                         <form onSubmit={handleManualLogin} className="border-0">
                             <div className="mb-3">
-                                <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email address</label>
-                                <input onBlur={getEmail} type="email" className="form-control border-0 border-bottom border-2 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <label className="form-label fw-bold">Email address</label>
+                                <input onBlur={getEmail} type="email" className="form-control rounded-0  border-0 border-bottom border-2 border-dark"  />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInputPassword1" className="form-label fw-bold">Password</label>
-                                <input onBlur={getPass} type="password" className="form-control border-0 border-bottom border-2 border-dark" id="exampleInputPassword1"/>
+                                <label className="form-label fw-bold">Password</label>
+                                <input onBlur={getPass} type="password" className="form-control rounded-0  border-0 border-bottom border-2 border-dark"/>
                             </div>
                             <h6 className="text-danger">{error}</h6>
                             <button type="submit" className="btn bg-pink px-5 py-3 text-uppercase fs-5">Log in</button>

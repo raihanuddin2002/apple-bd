@@ -76,7 +76,7 @@ const SignUp = () => {
                 password: password || ""
             }
         // Manual create account
-            signUpManually(name,email,password)
+            signUpManually(email,password)
                 .then((result) => {
                     updateProfile(auth.currentUser, {
                     displayName: name})
@@ -86,6 +86,7 @@ const SignUp = () => {
                         saveUser();
                     })
                     .catch((error) => {
+                        console.log("manual error")
                         setError(error.message);
                     });
                    
@@ -117,19 +118,19 @@ const SignUp = () => {
                         <form onSubmit={handleRegistration} className="border-0">
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Your Name</label>
-                                <input onBlur={getName} type="text" className="form-control border-0 border-bottom border-2 border-dark" required/>
+                                <input onBlur={getName} type="text" className="form-control rounded-0 border-0 border-bottom border-2 border-dark" required/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email address</label>
-                                <input onBlur={getEmail} type="email" className="form-control border-0 border-bottom border-2 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+                                <input onBlur={getEmail} type="email" className="form-control rounded-0  border-0 border-bottom border-2 border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputPassword1" className="form-label fw-bold">Password</label>
-                                <input onBlur={getPass} type="password" className="form-control border-0 border-bottom border-2 border-dark" id="exampleInputPassword1" required/>
+                                <input onBlur={getPass} type="password" className="form-control rounded-0  border-0 border-bottom border-2 border-dark" id="exampleInputPassword1" required/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputPassword1" className="form-label fw-bold">Confirm Password</label>
-                                <input onBlur={getConfirmPass} type="password" className="form-control border-0 border-bottom border-2 border-dark" id="exampleInputPassword1" required/>
+                                <input onBlur={getConfirmPass} type="password" className="form-control rounded-0  border-0 border-bottom border-2 border-dark" id="exampleInputPassword1" required/>
                             </div>
                             <h6 className="mb-3 text-danger">{error}</h6>
                             <button type="submit" className="btn bg-pink px-5 py-3 text-uppercase">Sign Up</button>
@@ -148,14 +149,6 @@ const SignUp = () => {
                             <button onClick={handleGoogleSignIn} className="btn btn-dark w-100 me-2">Google</button>
                         </div>
                     </div>
-                </div>
-                <div className="row">
-                    {
-                        error && <div className="alert alert-danger mt-3" role="alert">
-                        বি:দ্রঃ Signup page এর  Error টি যদি auth/internal-error or auth/internal হয়ে থাকে তাইলে একটু পড়ুন... <br />
-                        আমি একটা সমস্যার কারনে টেস্ট করতে করতে ঘন্টায় ১০০ টার বেশি Manual Sign up করে ফেলেছিলাম আমি জানতাম না যে লিমিটেড করা আছে ফলে আমাকে আর এই API KEY থেকে নতুন করে Manual Sign Up করতে দিচ্ছে না। আমি বিষয়টি আমি সাপোর্ট সেশনে দেখিয়েছিলাম উনারা বলছিল যে নতুন আরেকটা Account করতে কিন্তু আমি এটাতে Hosting করে Assignment লিংক Submit করে ফেলেছি তাই আমাকে Error টি উল্লেখ করে দিতে বলেছেন। আপনারা কোড চেক করে দেখেন ভুল নাই কোডে কাজ করতে করতে বন্ধ হয়ে গেছে। আশা করি সমস্যার বিষয়টি বুঝবেন
-                        </div>
-                    }
                 </div>
             </div>
         </div>
