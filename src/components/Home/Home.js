@@ -29,7 +29,12 @@ const Home = () => {
                     setReviewLoading(false);
                 }
             })
-    },[])
+    },[]);
+
+    const handleForm = (e) => {
+        e.preventDefault();
+        e.target.reset();
+    }
     return (
         <div>
         {/* Hero section */}
@@ -243,6 +248,52 @@ const Home = () => {
                     <input type="email" placeholder="Your Email" className="px-4 py-3 border rounded-3 me-3 mb-3" cols="20" style={{width: "50%"}}/>
                     <button className="btn bg-pink border-0  px-4 py-3 rounded-3" type="submit">Subscribe</button>
                 </div>
+            </div>
+        </section>
+
+        {/* Contact Form */}
+        <section className="bg-light-pink my-5">
+            <div className="container">
+                 {/* <!-- Blank --> */}
+                <div className="blank d-none d-md-block"  style={{height:"100px"}}></div>
+                {/* <!-- Blank --> */}
+                <div className="col-12 text-center">
+                    <h1 className="display-3 shadow-lg py-3">Contact Form</h1>
+                </div>
+
+                <div className="row bg-light-pink">
+                    <div className="col">
+                        <div style={{width:"100%"}} className="row row-cols-1 gy-4 mb-5 mx-auto">
+                            <form onSubmit={handleForm} className="border bg-white p-5 shadow-lg">
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputText1" className="form-label">Name</label>
+                                    <input type="text" className="form-control" id="exampleInputText1" aria-describedby="Text1Help"/>
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputText2" className="form-label">Email</label>
+                                    <input type="email" className="form-control" id="exampleInputText2" aria-describedby="Text2Help" />
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputPassword1" className="form-label">Phone</label>
+                                    <input type="text" className="form-control" id="exampleInputPassword1"/>
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputDesc" className="form-label">Message</label>
+                                    <textarea name="" id="" rows="10" className="w-100 border border-muted rounded"></textarea>
+                                </div>
+
+                                <button type="submit" className="btn bg-pink py-2 px-5 rounded-0">Send</button>
+                            </form>
+                        
+                        </div>
+                    </div>
+                </div>
+                 {/* <!-- Blank --> */}
+                <div className="blank d-none d-md-block"  style={{height:"50px"}}></div>
+            {/* <!-- Blank --> */}
             </div>
         </section>
     </div>
