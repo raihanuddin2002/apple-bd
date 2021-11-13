@@ -55,19 +55,19 @@ const Dashboard = () => {
                                         <li className="nav-item border-bottom">
                                             <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/review`}>Review</NavLink>
                                         </li>
-                                       {admin ? <li className="nav-item">
+                                       {admin.admin ? <li className="nav-item">
                                         <NavLink activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-all-order`}>Manage All Orders</NavLink>
                                         </li> : ""}
 
-                                        {admin ? <li className="nav-item">
+                                        {admin.admin ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/add-service`}>Add Service</NavLink>
                                         </li> : ""}
 
-                                        {admin ? <li className="nav-item">
+                                        {admin.admin ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/manage-products`}>Manage Products</NavLink>
                                         </li> : ""}
 
-                                        {admin ? <li className="nav-item">
+                                        {admin.admin ? <li className="nav-item">
                                         <NavLink  activeStyle={{background: "#f5cfd7"}} className="nav-link text-dark border-bottom px-4" to={`${url}/make-admin`}>Make Admin</NavLink>
                                         </li> : ""}
 

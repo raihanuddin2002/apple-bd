@@ -32,7 +32,7 @@ const Header = () => {
                          <NavLink className="nav-link text-dark me-4" to="/dashboard">Dashboard</NavLink>
                         </li>}
                         {!user && <li className="nav-item text-uppercase">
-                            <NavLink className="nav-link px-5 btn bg-pink ms-3" to="/login">Log In</NavLink>
+                            <NavLink className="nav-link px-5 btn bg-pink ms-3 mb-2 mb-lg-0" to="/login">Log In</NavLink>
                         </li>}
                         {!user && <li className="nav-item text-uppercase">
                             <NavLink className="nav-link me-4 px-5 btn bg-pink ms-3" to="/signup">Sign Up</NavLink>

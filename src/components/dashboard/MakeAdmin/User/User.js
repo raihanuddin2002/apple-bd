@@ -9,10 +9,11 @@ const User = (props) => {
             axios.put(`https://secret-tor-67063.herokuapp.com/users/${_id}`).then()
         }
     }
+    const userRole = role || "normal";
     return (
         <tr>
             <td>{email}</td>
-            <td>{role}</td>
+            <td>{userRole}</td>
             {role === "admin" ? <td><button className="btn bg-pink" disabled>Admin</button></td> :<td><button className="btn bg-pink" onClick={handleAdmin}>Admin</button></td> }
         </tr>
     );

@@ -73,8 +73,7 @@ const SignUp = () => {
             const saveUserInfo ={
                 displayName: name,
                 email: email,
-                password: password || "",
-                role: "normal"
+                password: password || ""
             }
         // Manual create account
             signUpManually(name,email,password)

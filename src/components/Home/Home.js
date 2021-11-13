@@ -30,7 +30,6 @@ const Home = () => {
                 }
             })
     },[])
-
     return (
         <div>
         {/* Hero section */}
@@ -133,7 +132,9 @@ const Home = () => {
                         reviews.map(review => <ShowReview key={review._id} data={review}></ShowReview>)
                     }
                     {
-                        isReviewLoading &&<div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading... </span></div> 
+                        isReviewLoading && <div className="d-flex justify-content-center align-items-center">
+                            <div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading... </span></div>
+                        </div> 
                     }
                 </div>
             </div>
@@ -150,7 +151,7 @@ const Home = () => {
             </div>
             <div className="row">
                 <div className="col-md-6 mb-3">
-                    <iframe className="w-100" height="315" src="https://www.youtube.com/embed/i4laq6e_B6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe className="w-100" height="315" src="https://www.youtube.com/embed/i4laq6e_B6U" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </div>
                 <div className="col-md-6">
                     <div className="accordion" id="accordionExample">

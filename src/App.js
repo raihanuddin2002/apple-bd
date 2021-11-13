@@ -9,13 +9,9 @@ import NotFound from './components/NotFound/NotFound';
 import OrderPlace from './components/OrderPlace/OrderPlace';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import About from './components/About/About';
-import MyOrders from './components/dashboard/MyOrders/MyOrders';
-import AllOrders from './components/dashboard/AllOrders/AllOrders';
-import AddService from './components/dashboard/AddService/AddService';
 import SignUp from './components/SignUp/SignUp';
 import AllProducts from './components/AllProducts/AllProducts';
 import Dashboard from './components/dashboard/DashBoard/Dashboard';
-import Pay from './components/dashboard/Pay/Pay';
 
 function App() {
   return (
