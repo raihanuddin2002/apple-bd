@@ -101,9 +101,9 @@ const Dashboard = () => {
                             <AddService></AddService>
                         </DashPrivateRoute>
 
-                        <Route path={`${path}/make-admin`}>
+                        <DashPrivateRoute path={`${path}/make-admin`}>
                             <MakeAdmin></MakeAdmin>
-                        </Route>
+                        </DashPrivateRoute>
 
                         <DashPrivateRoute path={`${path}/manage-products`}>
                             <ManageProducts></ManageProducts>
