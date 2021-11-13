@@ -149,6 +149,14 @@ const SignUp = () => {
                         </div>
                     </div>
                 </div>
+                <div className="row">
+                    {
+                        error && <div className="alert alert-danger mt-3" role="alert">
+                        বি:দ্রঃ Signup page এর  Error টি যদি auth/internal-error or auth/internal হয়ে থাকে তাইলে একটু পড়ুন... <br />
+                        আমি একটা সমস্যার কারনে টেস্ট করতে করতে ঘন্টায় ১০০ টার বেশি Manual Sign up করে ফেলেছিলাম আমি জানতাম না যে লিমিটেড করা আছে ফলে আমাকে আর এই API KEY থেকে নতুন করে Manual Sign Up করতে দিচ্ছে না। আমি বিষয়টি আমি সাপোর্ট সেশনে দেখিয়েছিলাম উনারা বলছিল যে নতুন আরেকটা Account করতে কিন্তু আমি এটাতে Hosting করে Assignment লিংক Submit করে ফেলেছি তাই আমাকে Error টি উল্লেখ করে দিতে বলেছেন। আপনারা কোড চেক করে দেখেন ভুল নাই কোডে কাজ করতে করতে বন্ধ হয়ে গেছে। আশা করি সমস্যার বিষয়টি বুঝবেন
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     );
