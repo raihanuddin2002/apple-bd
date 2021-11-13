@@ -98,7 +98,7 @@ const Login = () => {
                         </div>
                         <div className="text-center">
                             <h3 className="text-center d-none d-md-block mt-4">Get Started</h3>
-                            <button  onClick={handleGoogleSignIn} className="btn btn-dark w-100 me-2">Google</button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-dark w-100 me-2">Google</button>
                         </div>
                     </div>
                 </div>

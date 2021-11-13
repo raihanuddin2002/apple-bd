@@ -133,6 +133,18 @@ body {
 .tbdoy tr{
   margin-bottom: 20px !important;
 }
+input:focus{
+  outline: 0 !important;
+  border-color: #ff7593 !important;
+}
+textarea:focus{
+  outline: 0 !important;
+  border-color: #ff7593 !important;
+}
+button:focus{
+  box-shadow: none !important;
+  color: #ff7593;
+}
 @media only screen and (max-width: 991px) {
   .hero-header {
       font-size: 46px;

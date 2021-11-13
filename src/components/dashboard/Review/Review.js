@@ -35,7 +35,7 @@ const Review = () => {
                         <h5 className="card-header text-center display-4 bg-light-pink mb-3">REVIEW</h5>
                         <form onSubmit={handleForm} className="border-pink p-2 p-md-5">
                             <label htmlFor="" className="mb-2 fw-bold">Rate Services</label>
-                            <input ref={rateRef} type="text"  className="w-100 mb-3 py-2" placeholder=" Out of 5" required/>
+                            <input ref={rateRef} type="text"  className="form-control w-100 mb-3 py-2" placeholder="Out of 5" required/>
 
                             <label htmlFor="" className="mb-2 fw-bold">Comments</label>
                             <textarea ref={commentRef} className="w-100" name="" id="" rows="10" placeholder=" Write Comment.." required></textarea>
