@@ -8,7 +8,7 @@ const ServiceDetails = () => {
     const history = useHistory();
 
     const [services,setServices] = useState([]);
-    const [ticket, setTicekt] = useState(1);
+    const [quantity, setQuantiy] = useState(1);
     const [sucess,setSucess] = useState("");
     const {user} = useAuth('');
     const {displayName, email} = user;
@@ -16,7 +16,7 @@ const ServiceDetails = () => {
     const [memory, setMemory] = useState(0);
     const [storage, setStorage] = useState(0);
     const [delivery, setDelivery] = useState(0);
-    const totalCost = (parseFloat(ticket) * parseFloat(price)) + memory + storage + delivery || 0;
+    const totalCost = (parseFloat(quantity) * parseFloat(price)) + memory + storage + delivery || 0;
     const orderStatus = "Pending";
     const [isLoading, setIsLoading] = useState(true);
     const [isProceed, setIsProceed] = useState(false);
@@ -26,10 +26,10 @@ const ServiceDetails = () => {
     const adressRef = useRef(); 
     const phoneRef = useRef(); 
 
-    // ticket quantity
+    // quantity quantity
     const productQuantity = (e) => {
         const productQuantityValue = e.target.value;
-        setTicekt(productQuantityValue);
+        setQuantiy(productQuantityValue);
     }
     useEffect( () => {
         axios.get(`https://secret-tor-67063.herokuapp.com/products/${id}`)
@@ -46,7 +46,7 @@ const ServiceDetails = () => {
     const handleCartForm = (e) => {
         e.preventDefault();
         setIsProceed(true);
-        const productQuantity = ticket;
+        const productQuantity = quantity;
         const address = adressRef.current.value; 
         const phone = phoneRef.current.value;
         
@@ -95,16 +95,16 @@ const ServiceDetails = () => {
                             <div className="memory mb-4">
                                 <h6>Memory</h6>
                                 <div id="memory-buttons">
-                                    <button onClick={() => {setMemory(0);}} type="button" className="btn bg-pink me-2 mb-2">8GB unified Memory </button>
-                                    <button onClick={() => {setMemory(200);}} type="button" className="btn bg-pink">16GB unified Memory</button>
+                                    <button onClick={() => {setMemory(0);}} type="button" className="btn bg-pink me-2 mb-sm-2 mb-lg-0">4GB unified Memory </button>
+                                    <button onClick={() => {setMemory(200);}} type="button" className="btn bg-pink">6GB unified Memory</button>
                                 </div>
                             </div>
                             {/* <!-- Storage --> */}
                             <div className="storage mb-4">
                                 <h6>Storage</h6>
                                 <div id="storage-buttons">
-                                    <button  onClick={() => {setStorage(0)}} type="button" className="btn bg-pink me-2 mb-2" >256GB SSD Storage</button>
-                                    <button  onClick={() => {setStorage(300)}} type="button" className="btn bg-pink me-2 mb-2" >512GB SSD Storage</button>
+                                    <button  onClick={() => {setStorage(0)}} type="button" className="btn bg-pink me-2 mb-sm-2 mb-lg-0" >256GB SSD Storage</button>
+                                    <button  onClick={() => {setStorage(300)}} type="button" className="btn bg-pink me-2 mb-sm-2 mb-lg-0" >512GB SSD Storage</button>
                                     <button  onClick={() => {setStorage(500)}} type="button" className="btn bg-pink">1TB SSD Storage</button>
                                 </div>
                         </div>
@@ -112,7 +112,7 @@ const ServiceDetails = () => {
                         <div className="delivery mb-4">
                             <h6>Choose your delivery option</h6>
                             <div id="delivery-buttons">
-                                <button  onClick={() => {setDelivery(0)}} type="button" className="btn bg-pink me-2 mb-2">7 days delivery</button>
+                                <button  onClick={() => {setDelivery(0)}} type="button" className="btn bg-pink me-2 mb-sm-2 mb-lg-0">7 days delivery</button>
                                 <button  onClick={() => {setDelivery(10)}} type="button" className="btn bg-pink">3 days Delivery</button>
                             </div>
                         </div>
@@ -150,14 +150,33 @@ const ServiceDetails = () => {
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputQuantity" className="form-label">Quantity</label>
-                                    <input onChange={productQuantity} type="text" className="form-control" id="exampleInputQuantity" aria-describedby="quantityHelp" value={ticket}/>
+                                    <input onChange={productQuantity} type="text" className="form-control" id="exampleInputQuantity" aria-describedby="quantityHelp" value={quantity}/>
+                                </div>
+                                
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputCost" className="form-label">Extra Memory Cost $</label>
+                                    <input type="text" className="form-control" id="exampleInputCost" aria-describedby="costHelp" value={memory} readOnly/>
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="exampleInputCost" className="form-label">Base Price</label>
-                                    <input type="text" className="form-control" id="exampleInputCost" aria-describedby="costHelp" value={price} readOnly/>
+                                    <label htmlFor="exampleInputCost" className="form-label">Extra Storage Cost $</label>
+                                    <input type="text" className="form-control" id="exampleInputCost" aria-describedby="costHelp" value={storage} readOnly/>
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="exampleInputCost" className="form-label">Total Price</label>
+                                    <label htmlFor="exampleInputCost" className="form-label">Delivery Charge $</label>
+                                    <input type="text" className="form-control" id="exampleInputCost" aria-describedby="costHelp" value={delivery} readOnly/>
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputCost" className="form-label">Total Extra Cost $</label>
+                                    <input type="text" className="form-control" id="exampleInputCost" aria-describedby="costHelp" value={memory+ storage +delivery} readOnly/>
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputCost" className="form-label">Base Price $</label>
+                                    <input type="text" className="form-control" id="exampleInputCost" aria-describedby="costHelp" value={(parseFloat(price)*quantity).toFixed(2)} readOnly/>
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputCost" className="form-label">Total Price $</label>
                                     <input type="text" className="form-control" id="exampleInputCost" aria-describedby="costHelp" value={totalCost.toFixed(2)} readOnly/>
                                 </div>
                                 <div className="d-flex justify-content-between">
@@ -171,30 +190,6 @@ const ServiceDetails = () => {
                                 <h6 className="text-success mt-3">{sucess}</h6>
                             </form>
                         </div>
-                    </div>
-
-                    {/* Show rate */}
-                    <div className="mt-4">
-                        <table className="table caption-top table-responsive">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Extra Memory Cost</th>
-                                    <td className="fw-bold"><span className="text-pink">$</span>{memory}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Extra Storage Cost</th>
-                                    <td className="fw-bold"><span className="text-pink">$</span>{storage}</td>
-                                </tr>
-                                <tr className="border-dark">
-                                    <th scope="row">Delivery Charge</th>
-                                    <td className="fw-bold"><span className="text-pink">$</span>{delivery}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Total extra Cost</th>
-                                    <td className="fw-bold"><span className="text-pink" id="memory-price">$</span>{memory+storage+delivery}</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
