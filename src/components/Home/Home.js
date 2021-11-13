@@ -128,7 +128,7 @@ const Home = () => {
             </div>
 
             <div className="row align-items-center">
-                <div style={{height: "40vh", background:"#d3d3d34a"}} className="col-md-6 overflow-scroll scrollbar-hide py-5">
+                <div style={{height: "50vh", background:"", boxShadow: "0px 0px 15px #cfbebb inset"}} className="overflow-scroll scrollbar-hide py-5">
                     {
                         reviews.map(review => <ShowReview key={review._id} data={review}></ShowReview>)
                     }
@@ -136,57 +136,71 @@ const Home = () => {
                         isReviewLoading &&<div className="spinner-border text-pink p-4" role="status"><span className="visually-hidden">Loading... </span></div> 
                     }
                 </div>
-                <div className="col-md-6">
-                <div className="accordion" id="accordionExample">
-                    <div className="accordion-item">
-                        <h2 className="accordion-header" id="headingOne">
-                        <button className="accordion-button text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            How We works?
-                        </button>
-                        </h2>
-                        <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div className="accordion-body">
-                        WeWork is simply an office-leasing company. It makes money by renting office space. ... It rents desks to individuals or groups who want the benefits of a fully stocked office without the expense of a full office. Members include independent freelancers and remote workers who need an occasional office away from home.
-                        </div>
-                        </div>
-                    </div>
-                    <div className="accordion-item">
-                        <h2 className="accordion-header" id="headingTwo">
-                        <button className="accordion-button collapsed text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            How to use this site?
-                        </button>
-                        </h2>
-                        <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div className="accordion-body">
-                            <ol>
-                                <li>Open Sites.</li>
-                                <li>Login to see all services</li>
-                                <li>In dashboard you can see your orders</li>
-                                <li>You can reviw our Products in dashboard/review page</li>
-                                <li>Click “Send” when you're done.</li>
-                                <li> Let others view or edit your website</li>
-                            </ol>
-                        </div>
-                        </div>
-                    </div>
-                    <div className="accordion-item">
-                        <h2 className="accordion-header" id="headingThree">
-                        <button className="accordion-button collapsed text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            How to see Users Review?
-                        </button>
-                        </h2>
-                        <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                        <div className="accordion-body">
-                            In your left side or top(small device). There you can all reviews. Scroll to see all reviews. It is scrollable.
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-               
             </div>
         </section>
-
+        
+        {/* Instruction */}
+        <section className="container">
+            {/* <!-- Blank --> */}
+            <div className="blank d-none d-md-block"  style={{height:"50px"}}></div>
+            {/* <!-- Blank --> */}
+            <div className="text-center">
+                <h5 className="text-gray">FAQ</h5>
+                <h1 className="fs-1 ff-volkhob fw-bold mb-5">Frequently Ask Question</h1>
+            </div>
+            <div className="row">
+                <div className="col-md-6 mb-3">
+                    <iframe className="w-100" height="315" src="https://www.youtube.com/embed/i4laq6e_B6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div className="col-md-6">
+                    <div className="accordion" id="accordionExample">
+                        <div className="accordion-item">
+                            <h2 className="accordion-header" id="headingOne">
+                            <button className="accordion-button text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How We works?
+                            </button>
+                            </h2>
+                            <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div className="accordion-body">
+                            WeWork is simply an office-leasing company. It makes money by renting office space. ... It rents desks to individuals or groups who want the benefits of a fully stocked office without the expense of a full office. Members include independent freelancers and remote workers who need an occasional office away from home.
+                            </div>
+                            </div>
+                        </div>
+                        <div className="accordion-item">
+                            <h2 className="accordion-header" id="headingTwo">
+                            <button className="accordion-button collapsed text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How to use this site?
+                            </button>
+                            </h2>
+                            <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div className="accordion-body">
+                                <ol>
+                                    <li>Open Sites.</li>
+                                    <li>Login to see all services</li>
+                                    <li>In dashboard you can see your orders</li>
+                                    <li>You can reviw our Products in dashboard/review page</li>
+                                    <li>Click “Send” when you're done.</li>
+                                    <li> Let others view or edit your website</li>
+                                </ol>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="accordion-item">
+                            <h2 className="accordion-header" id="headingThree">
+                            <button className="accordion-button collapsed text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                How to see Users Review?
+                            </button>
+                            </h2>
+                            <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div className="accordion-body">
+                                In your top section. There you can all reviews. Scroll to see all reviews. It is scrollable.
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
             {/* <!-- Testimonial section --> */}
         <section className="container my-5">
             <div className="row">

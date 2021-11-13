@@ -3,10 +3,10 @@ import React from 'react';
 const About = () => {
     return (
         <div>
-            <div className="about-container text-center">
-                <div className="about-container-clone d-flex justify-content-center align-items-center">
+            <div className="about-container text-center d-flex justify-content-center align-items-center">
+                <div className="about-container-clone ">
                     <div>
-                        <h1 className="display-1 text-pink shadow-lg">WECOME TO ABOUT PAGE</h1>
+                        <h1 className="display-1 shadow-sm py-2 px-4">WECOME TO ABOUT PAGE</h1>
                     </div>
                 </div>
             </div>
@@ -25,11 +25,11 @@ const About = () => {
             <div style={{background: "#cdcdcd"}}>
             <div className="container py-5">
                 <div className="courses-header text-center">
-                    <h2 className="card-header courses-heading py-4 mt-lg-5 display-3 bg-light-pink">OVERVIEW</h2>
+                    <h2 className="card-header courses-heading py-4 mt-lg-5 display-3 bg-light-pink shadow-lg">OVERVIEW</h2>
                     
                 </div>
 
-                <div>
+                <div className="shadow-lg">
                 <table className="table table-light table-striped table-responsive table-bordered fs-4 p-2">
                             <tbody>
                                 <tr>
