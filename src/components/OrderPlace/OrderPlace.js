@@ -13,8 +13,10 @@ const ServiceDetails = () => {
     const {user} = useAuth('');
     const {displayName, email} = user;
     const {name,description,price,rating,people,picture} = services;
-    const [otherCost, setOtherCost] = useState(0);
-    const totalCost = (parseFloat(ticket) * parseFloat(price)) || 0;
+    const [memory, setMemory] = useState(0);
+    const [storage, setStorage] = useState(0);
+    const [delivery, setDelivery] = useState(0);
+    const totalCost = (parseFloat(ticket) * parseFloat(price)) + memory + storage + delivery || 0;
     const orderStatus = "Pending";
     const [isLoading, setIsLoading] = useState(true);
     const [isProceed, setIsProceed] = useState(false);
@@ -38,7 +40,7 @@ const ServiceDetails = () => {
                     setIsLoading(false);
                 }
             })
-    },[services])
+    },[])
 
     // Handle Cart from
     const handleCartForm = (e) => {
@@ -93,25 +95,25 @@ const ServiceDetails = () => {
                             <div className="memory mb-4">
                                 <h6>Memory</h6>
                                 <div id="memory-buttons">
-                                    <button type="button" className="btn bg-pink me-2">8GB unified Memory</button>
-                                    <button type="button" className="btn bg-pink">16GB unified Memory</button>
+                                    <button onClick={() => {setMemory(0);}} type="button" className="btn bg-pink me-2">8GB unified Memory </button>
+                                    <button onClick={() => {setMemory(200);}} type="button" className="btn bg-pink">16GB unified Memory</button>
                                 </div>
                             </div>
                             {/* <!-- Storage --> */}
                             <div className="storage mb-4">
                                 <h6>Storage</h6>
                                 <div id="storage-buttons">
-                                    <button type="button" className="btn bg-pink me-2" >256GB SSD Storage</button>
-                                    <button type="button" className="btn bg-pink me-2" >512GB SSD Storage</button>
-                                    <button type="button" className="btn bg-pink">1TB SSD Storage</button>
+                                    <button  onClick={() => {setStorage(0)}} type="button" className="btn bg-pink me-2" >256GB SSD Storage</button>
+                                    <button  onClick={() => {setStorage(300)}} type="button" className="btn bg-pink me-2" >512GB SSD Storage</button>
+                                    <button  onClick={() => {setStorage(500)}} type="button" className="btn bg-pink">1TB SSD Storage</button>
                                 </div>
                         </div>
                         {/* <!-- delivery --> */}
                         <div className="delivery mb-4">
                             <h6>Choose your delivery option</h6>
                             <div id="delivery-buttons">
-                                <button type="button" className="btn bg-pink me-2">7 days delivery</button>
-                                <button type="button" className="btn bg-pink me-2">3 days Delivery</button>
+                                <button  onClick={() => {setDelivery(0)}} type="button" className="btn bg-pink me-2">7 days delivery</button>
+                                <button  onClick={() => {setDelivery(10)}} type="button" className="btn bg-pink me-2">3 days Delivery</button>
                             </div>
                         </div>
                         </div>
